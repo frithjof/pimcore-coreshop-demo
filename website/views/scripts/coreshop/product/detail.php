@@ -1,119 +1,100 @@
-<div class="container product-detail">
-    
+<!-- Main Container Starts -->
+<div id="main-container" class="container">
     <div class="row">
-        <div class="col-xs-12 col-sm-4">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="col-md-square product-detail-image">
-                        <div class="col-inner">
-                            <div class="aligned">
-                                <div class="aligned-center aligned-content text-center">
-                                    <img src="<?=$this->product->getImage()->getThumbnail("coreshop_productDetail")?>" class="img-responsive" style="display:inline" id="product-image-<?=$this->product->getId()?>"/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            <?php if(count($this->product->getImages()) > 1) { ?>
-            <div class="row">
-                <div class="col-xs-12 col-sm-12">
-                    <div id="product-detail-thumbnails" data-large-image="#product-image-<?=$this->product->getId()?>">
+
+    <?=$this->template("coreshop/helper/left.php")?>
+    <!-- Primary Content Starts -->
+        <div class="col-md-9">
+        <!-- Breadcrumb Starts -->
+            <ol class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="category-list.html">Category</a></li>
+                <li class="active">Product</li>
+            </ol>
+        <!-- Breadcrumb Ends -->
+        <!-- Product Info Starts -->
+            <div class="row product-info">
+            <!-- Left Starts -->
+                
+                <div class="col-sm-5 images-block">
+                    <?php if($this->product->getImages() > 0) { ?>
+                    <p>
+                        <img src="<?=$this->product->getImage()->getThumbnail("coreshop_productDetail")?>?>" alt="<?=$this->product->getName()?>" class="img-responsive thumbnail" />
+                    </p>
+                    <ul class="list-unstyled list-inline">
                         <?php foreach($this->product->getImages() as $image) { ?>
-                            <div class="item"><img src="<?=$image->getThumbnail("coreshop_productDetailThumbnail")?>" data-large-img="<?=$image->getThumbnail("coreshop_productDetail")?>" /></div>
+                        <li>
+                            <img src="<?=$image->getThumbnail("coreshop_productDetailThumbnail")?>?>" alt="<?=$this->product->getName()?>" class="img-responsive thumbnail" />
+                        </li>
                         <?php } ?>
-                    </div>
+                    </ul>
+                    <?php } ?>
                 </div>
-            </div>
-            <?php } ?>
-        </div>
-        
-        <div class="col-xs-12 col-sm-4">
-            <h1><?=$this->product->getName()?></h1>
-            <h3><?=$this->translate("Kurzbeschreibung") ?></h3>
-            <div class="product-detail-desc">
-                <?=$this->product->getDescription(); ?>
-            </div>
-            
-            <div class="row">
-                <div class="row-same-height row-full-height">
-                    <div class="col-xs-6 col-sm-3 col-full-height col-xs-height">
-                        <div class="col-inner background-red price">
-                            <?=CoreShop_Tool::formatPrice($this->product->getPrice())?>
+            <!-- Left Ends -->
+            <!-- Right Starts -->
+                <div class="col-sm-7 product-details">
+                <!-- Product Name Starts -->
+                    <h2><?=$this->product->getName()?></h2>
+                <!-- Product Name Ends -->
+                    <hr />
+                <!-- Manufacturer Starts -->
+                    <ul class="list-unstyled manufacturer">
+                        <li>
+                            <span>Brand:</span> Indian spices
+                        </li>
+                        <li><span>Reward Points:</span> 300</li>
+                        <li>
+                            <span>Availability:</span> <strong class="label label-success">In Stock</strong>
+                        </li>
+                    </ul>
+                <!-- Manufacturer Ends -->
+                    <hr />
+                <!-- Price Starts -->
+                    <div class="price">
+                        <span class="price-head"><?=$this->translate("Price")?> :</span>
+                        <span class="price-new"><?=\CoreShop\Tool::formatPrice($this->product->getPrice());?></span>
+                    </div>
+                <!-- Price Ends -->
+                    <hr />
+                <!-- Available Options Starts -->
+                    <div class="options">
+                        <div class="form-group">
+                            <label class="control-label text-uppercase" for="input-quantity"><?=$this->translate("Qty")?>:</label>
+                            <input type="text" name="quantity" value="1" size="2" id="input-quantity" class="form-control" />
+                        </div>
+                        <div class="cart-button button-group">
+                            <button type="button" title="Wishlist" class="btn btn-wishlist">
+                                <i class="fa fa-heart"></i>
+                            </button>
+                            <button type="button" title="Compare" class="btn btn-compare">
+                                <i class="fa fa-bar-chart-o"></i>
+                            </button>
+                            <button type="button" class="btn btn-cart">
+                                <?=$this->translate("Add to cart")?>
+                                <i class="fa fa-shopping-cart"></i>
+                            </button>
                         </div>
                     </div>
-                    <div class="col-xs-6 col-sm-4 col-full-height col-xs-height">
-                        <?=sprintf($this->translate("Inkl. %s Mwst."), CoreShop_Tool::formatTax($this->product->getTax()))?>
-                    </div>
+                <!-- Available Options Ends -->
+                    <hr />
+                </div>
+            <!-- Right Ends -->
+            </div>
+        <!-- product Info Ends -->
+        <!-- Product Description Starts -->
+            <div class="product-info-box">
+                <h4 class="heading"><?=$this->translate("Description")?></h4>
+                <div class="content panel-smart">
+                    <?=$this->product->getDescription()?>
                 </div>
             </div>
-        </div>
+        <!-- Product Description Ends -->
         
-        <div class="col-xs-12 col-sm-3 col-sm-push-1">
-            <div class="col-md-square product-detail-variants">
-                <div class="col-inner background-red">
-                    <div class="aligned">
-                        
-                        <div class="aligned-row">
-                            <div class="aligned-content aligned-top text-center">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <h3><?=$this->translate("Ausführung")?></h3>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <?php
-                                        $variants = $this->product->getVariantDifferences();
-                                        
-                                        foreach($variants as $key => $fields)
-                                        {
-                                            foreach($fields as $field) {
-                                            ?>
-                                            <div class="col-xs-12">
-                                                <div class="form-group">
-                                                    <select name="variant" class="selectpicker btn-white">
-                                                        <?php foreach($field as $option) { ?>
-                                                            <?php 
-                                                                $variant = Object_CoreShopProduct::getById($option['object']);
-                                                                
-                                                                if(!$variant instanceof Object_CoreShopProduct)
-                                                                    continue;
-                                                                    
-                                                                $href = $this->url(array("lang" => $this->language, "product" => $variant->getId(), "name" => $variant->getName()), "coreshop_detail");
-                                                            ?>
-                                                            <option data-href="<?=$href?>" value="<?=$option['object']?>" <?=$this->product->getId() == $option['object'] ? "selected" : ""?>><?=$this->translate($option['value'])?></option>
-                                                        <?php } ?>
-                                                    </select>
-                                                </div>
-                                            </div><?php
-                                            }
-                                        }
-                                    ?>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="aligned-row">
-                            <div class="aligned-content aligned-bottom text-center">
-                                <?php if($this->product->getNeedsPersonalData() || $this->product->getNeedsDoublePersonalData()) { ?>
-                                    <a class="btn btn-red btn-borderd btn-to-cart" data-toggle="modal" data-target="#product-detail-<?=$this->product->getId()?>">
-                                        <?=$this->translate("In den Warenkorb")?>
-                                    </a>
-                                <?php } else { ?>
-                                    <a class="btn btn-red btn-borderd addToCart" data-id="<?=$this->product->getId()?>" data-img="#product-image-<?=$this->product->getId()?>">
-                                        <?=$this->translate("In den Warenkorb")?>
-                                    </a>
-                                <?php } ?>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?=\CoreShop\Plugin::hook("product-detail-bottom", array("product" => $this->product))?>
         
+        
+        </div>
+    <!-- Primary Content Ends -->
     </div>
 </div>
-
-<?=$this->template("coreshop/product/helper/product-details-modal.php", array("product" => $this->product));?>
+<!-- Main Container Ends -->
