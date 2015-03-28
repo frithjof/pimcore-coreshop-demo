@@ -1,0 +1,3 @@
+[submodule "plugins/CoreShop"]
+	path = plugins/CoreShop
+	url = https://dpfaffenbauer@github.com/dpfaffenbauer/pimcore-coreshop.git
