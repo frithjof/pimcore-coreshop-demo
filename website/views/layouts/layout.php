@@ -26,7 +26,7 @@
 
     <?= $this->headLink()?>
     <?= $this->headMeta()?>
-    <?= $this->headTitle($this->translate($this->document->getProperty("title"))); ?>
+    <?= $this->headTitle(); ?>
     <?= $this->headStyle()?>
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

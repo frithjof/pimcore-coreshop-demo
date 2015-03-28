@@ -10,7 +10,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	
-	<title>Electro Shoppe Stores - Bootstrap 3 Template</title>
+	<?php echo $this->headTitle($this->document->getProperty("title"))?>
 	
 	<!-- Bootstrap Core CSS -->
 	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
@@ -536,223 +536,9 @@
 					</ul>
 				</div>
 			<!-- 2 Column Banners Ends -->
-			<!-- Latest Products Starts -->
-				<section class="product-carousel">
-				<!-- Heading Starts -->
-					<h2 class="product-head">Latest Products</h2>
-				<!-- Heading Ends -->
-				<!-- Products Row Starts -->
-					<div class="row">
-						<div class="col-xs-12">
-						<!-- Product Carousel Starts -->
-							<div id="owl-product" class="owl-carousel">
-							<!-- Product #1 Starts -->
-								<div class="item">
-									<div class="product-col">
-										<div class="image">
-											<img src="/static/images/product-images/1.jpg" alt="product" class="img-responsive" />
-										</div>
-										<div class="caption">
-											<h4><a href="product.html">Digital Electro Goods</a></h4>
-											<div class="description">
-												We are so lucky living in such a wonderful time. Our almost unlimited ...
-											</div>
-											<div class="price">
-												<span class="price-new">$199.50</span> 
-												<span class="price-old">$249.50</span>
-											</div>
-											<div class="cart-button">
-												<button type="button" class="btn btn-cart">
-													Add to cart
-													<i class="fa fa-shopping-cart"></i> 
-												</button>									
-											</div>
-										</div>
-									</div>
-								</div>
-							<!-- Product #1 Ends -->
-							<!-- Product #2 Starts -->
-								<div class="item">
-									<div class="product-col">
-										<div class="image">
-											<img src="/static/images/product-images/2.jpg" alt="product" class="img-responsive" />
-										</div>
-										<div class="caption">
-											<h4><a href="product.html">Digital Electro Goods</a></h4>
-											<div class="description">
-												We are so lucky living in such a wonderful time. Our almost unlimited ...
-											</div>
-											<div class="price">
-												<span class="price-new">$199.50</span> 
-												<span class="price-old">$249.50</span>
-											</div>
-											<div class="cart-button">
-												<button type="button" class="btn btn-cart">
-													Add to cart
-													<i class="fa fa-shopping-cart"></i> 
-												</button>									
-											</div>
-										</div>
-									</div>
-								</div>
-							<!-- Product #2 Ends -->
-							<!-- Product #3 Starts -->
-								<div class="item">	
-									<div class="product-col">
-										<div class="image">
-											<img src="/static/images/product-images/3.jpg" alt="product" class="img-responsive" />
-										</div>
-										<div class="caption">
-											<h4><a href="product.html">Digital Electro Goods</a></h4>
-											<div class="description">
-												We are so lucky living in such a wonderful time. Our almost unlimited ...
-											</div>
-											<div class="price">
-												<span class="price-new">$199.50</span> 
-												<span class="price-old">$249.50</span>
-											</div>
-											<div class="cart-button">
-												<button type="button" class="btn btn-cart">
-													Add to cart
-													<i class="fa fa-shopping-cart"></i> 
-												</button>									
-											</div>
-										</div>
-									</div>
-								</div>
-							<!-- Product #3 Ends -->
-							<!-- Product #4 Starts -->
-								<div class="item">	
-									<div class="product-col">
-										<div class="image">
-											<img src="/static/images/product-images/4.jpg" alt="product" class="img-responsive" />
-										</div>
-										<div class="caption">
-											<h4><a href="product.html">Digital Electro Goods</a></h4>
-											<div class="description">
-												We are so lucky living in such a wonderful time. Our almost unlimited ...
-											</div>
-											<div class="price">
-												<span class="price-new">$199.50</span> 
-												<span class="price-old">$249.50</span>
-											</div>
-											<div class="cart-button">
-												<button type="button" class="btn btn-cart">
-													Add to cart
-													<i class="fa fa-shopping-cart"></i> 
-												</button>									
-											</div>
-										</div>
-									</div>
-								</div>
-							<!-- Product #4 Ends -->
-							<!-- Product #5 Starts -->
-								<div class="item">
-									<div class="product-col">
-										<div class="image">
-											<img src="/static/images/product-images/5.jpg" alt="product" class="img-responsive" />
-										</div>
-										<div class="caption">
-											<h4><a href="product.html">Digital Electro Goods</a></h4>
-											<div class="description">
-												We are so lucky living in such a wonderful time. Our almost unlimited ...
-											</div>
-											<div class="price">
-												<span class="price-new">$199.50</span> 
-												<span class="price-old">$249.50</span>
-											</div>
-											<div class="cart-button">
-												<button type="button" class="btn btn-cart">
-													Add to cart
-													<i class="fa fa-shopping-cart"></i> 
-												</button>									
-											</div>
-										</div>
-									</div>
-								</div>
-							<!-- Product #5 Ends -->
-							<!-- Product #6 Starts -->
-								<div class="item">
-									<div class="product-col">
-										<div class="image">
-											<img src="/static/images/product-images/6.jpg" alt="product" class="img-responsive" />
-										</div>
-										<div class="caption">
-											<h4><a href="product.html">Digital Electro Goods</a></h4>
-											<div class="description">
-												We are so lucky living in such a wonderful time. Our almost unlimited ...
-											</div>
-											<div class="price">
-												<span class="price-new">$199.50</span> 
-												<span class="price-old">$249.50</span>
-											</div>
-											<div class="cart-button">
-												<button type="button" class="btn btn-cart">
-													Add to cart
-													<i class="fa fa-shopping-cart"></i> 
-												</button>									
-											</div>
-										</div>
-									</div>
-								</div>
-							<!-- Product #6 Ends -->
-							<!-- Product #7 Starts -->
-								<div class="item">	
-									<div class="product-col">
-										<div class="image">
-											<img src="/static/images/product-images/7.jpg" alt="product" class="img-responsive" />
-										</div>
-										<div class="caption">
-											<h4><a href="product.html">Digital Electro Goods</a></h4>
-											<div class="description">
-												We are so lucky living in such a wonderful time. Our almost unlimited ...
-											</div>
-											<div class="price">
-												<span class="price-new">$199.50</span> 
-												<span class="price-old">$249.50</span>
-											</div>
-											<div class="cart-button">
-												<button type="button" class="btn btn-cart">
-													Add to cart
-													<i class="fa fa-shopping-cart"></i> 
-												</button>									
-											</div>
-										</div>
-									</div>
-								</div>
-							<!-- Product #7 Ends -->
-							<!-- Product #8 Starts -->
-								<div class="item">	
-									<div class="product-col">
-										<div class="image">
-											<img src="/static/images/product-images/8.jpg" alt="product" class="img-responsive" />
-										</div>
-										<div class="caption">
-											<h4><a href="product.html">Digital Electro Goods</a></h4>
-											<div class="description">
-												We are so lucky living in such a wonderful time. Our almost unlimited ...
-											</div>
-											<div class="price">
-												<span class="price-new">$199.50</span> 
-												<span class="price-old">$249.50</span>
-											</div>
-											<div class="cart-button">
-												<button type="button" class="btn btn-cart">
-													Add to cart
-													<i class="fa fa-shopping-cart"></i> 
-												</button>									
-											</div>
-										</div>
-									</div>
-								</div>
-							<!-- Product #8 Ends -->
-							</div>
-						<!-- Product Carousel Ends -->
-						</div>
-					</div>
-				<!-- Products Row Ends -->
-				</section>
-			<!-- Latest Products Ends -->
+			
+			<?=$this->template("coreshop/product/helper/latest-products.php");?>
+			
 			<!-- Specials Products Starts -->
 				<section class="products-list">			
 				<!-- Heading Starts -->
@@ -964,6 +750,7 @@
 <script src="/static/js/bootstrap-hover-dropdown.min.js"></script>
 <script src="/static/js/jquery.magnific-popup.min.js"></script>
 <script src="/static/js/owl.carousel.min.js"></script>
+<script src="/static/js/shop.js"></script>
 <script src="/static/js/custom.js"></script>
 </body>
 </html>

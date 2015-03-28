@@ -24,7 +24,7 @@ class Action extends Frontend
             $locale = new \Zend_Locale();
 
             if (!in_array($locale->getLanguage(), $this->validLanguages)) {
-                $locale = new Zend_Locale("en");
+                $locale = new \Zend_Locale("en_EN");
             }
 
             \Zend_Registry::set("Zend_Locale", $locale);
@@ -37,7 +37,6 @@ class Action extends Frontend
         
         $this->addScriptAndCss();
         $this->enableLayout();
-        //$this->view->addScriptPath(PIMCORE_PLUGINS_PATH . "/Bootstrap/views/scripts");
     }
     
     public function addScriptAndCss()
