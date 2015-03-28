@@ -1,0 +1,9 @@
+{
+    "config": {
+        "document-root-path": "./"
+    },
+    "require": {
+        "pimcore-extensions/manager": "dev-master"
+    },
+    "minimum-stability": "dev"
+}

@@ -1,0 +1,9 @@
+website/var/log/debug.log
+website/var/log/usagelog.log
+website/var/tmp
+website/var/recyclebin
+website/var/versions
+db-change-*.sql
+vendor
+composer.lock
+php.log
