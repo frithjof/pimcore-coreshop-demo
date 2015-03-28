@@ -1,6 +1,8 @@
 <?php
 
-class EmailController extends Website_Controller_Action
+use Website\Controller\Action;
+
+class EmailController extends Action
 {
     public function init()
     {

@@ -1,6 +1,8 @@
 <?php
+    
+use Website\Controller\Action;
 
-class SnippetController extends Website_Controller_Project
+class SnippetController extends Action
 {
     public function init()
     {

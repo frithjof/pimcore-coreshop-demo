@@ -1,6 +1,8 @@
 <?php
 
-class ErrorController extends Website_Controller_Project
+use Website\Controller\Action;
+
+class ErrorController extends Action
 {
     public function errorAction()
     {

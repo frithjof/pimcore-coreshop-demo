@@ -1,6 +1,8 @@
 <?php
 
-class SearchController extends Website_Controller_Project
+use Website\Controller\Action;
+
+class SearchController extends Action
 {
     public function init()
     {
