@@ -1,7 +1,7 @@
 <!-- Main Container Starts -->
 <div id="main-container-home" class="container">
     <div class="row">
-    <?=$this->template("coreshop/helper/left")?>
+    <?=$this->template("coreshop/helper/left.php")?>
     <!-- Primary Content Starts -->
         <div class="col-md-9">
         <!-- Slider Section Starts -->

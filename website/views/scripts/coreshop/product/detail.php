@@ -7,9 +7,13 @@
         <div class="col-md-9">
         <!-- Breadcrumb Starts -->
             <ol class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="category-list.html">Category</a></li>
-                <li class="active">Product</li>
+                <li><a href="<?=$this->url(array("lang" => $this->language), "coreshop_index", true)?>"><?=$this->translate("Home")?></a></li>
+                <?php if(count($this->product->getCategories()) > 0) { ?>
+                    <?php foreach($this->product->getCategories()[0]->getHierarchy() as $cat) { ?>
+                        <li><a href="<?=$this->url(array("lang" => $this->language, "name" => $cat->getName(), "category" => $cat->getId()), "coreshop_list", true)?>"><?=$cat->getName()?></a></li>
+                    <?php } ?>
+                <?php } ?>
+                <li class="active"><a href="<?=$this->url(array("lang" => $this->language, "name" => $this->product->getName(), "product" => $this->product->getId()), "coreshop_detail", true)?>"><?=$this->product->getName()?></a></li>
             </ol>
         <!-- Breadcrumb Ends -->
         <!-- Product Info Starts -->
@@ -19,7 +23,7 @@
                 <div class="col-sm-5 images-block">
                     <?php if($this->product->getImages() > 0) { ?>
                     <p>
-                        <img src="<?=$this->product->getImage()->getThumbnail("coreshop_productDetail")?>?>" alt="<?=$this->product->getName()?>" class="img-responsive thumbnail" />
+                        <img src="<?=$this->product->getImage()->getThumbnail("coreshop_productDetail")?>?>" alt="<?=$this->product->getName()?>" id="product-image-<?=$this->product->getId()?>" class="img-responsive thumbnail" />
                     </p>
                     <ul class="list-unstyled list-inline">
                         <?php foreach($this->product->getImages() as $image) { ?>
@@ -38,7 +42,7 @@
                 <!-- Product Name Ends -->
                     <hr />
                 <!-- Manufacturer Starts -->
-                    <ul class="list-unstyled manufacturer">
+                    <!--<ul class="list-unstyled manufacturer">
                         <li>
                             <span>Brand:</span> Indian spices
                         </li>
@@ -46,7 +50,10 @@
                         <li>
                             <span>Availability:</span> <strong class="label label-success">In Stock</strong>
                         </li>
-                    </ul>
+                    </ul>-->
+                    <div class="description">
+                        <?=$this->product->getShortDescription()?>
+                    </div>
                 <!-- Manufacturer Ends -->
                     <hr />
                 <!-- Price Starts -->
@@ -69,7 +76,7 @@
                             <button type="button" title="Compare" class="btn btn-compare">
                                 <i class="fa fa-bar-chart-o"></i>
                             </button>
-                            <button type="button" class="btn btn-cart">
+                            <button type="button" class="btn btn-cart" data-id="<?=$this->product->getId()?>" data-img="#product-image-<?=$this->product->getId()?>">
                                 <?=$this->translate("Add to cart")?>
                                 <i class="fa fa-shopping-cart"></i>
                             </button>

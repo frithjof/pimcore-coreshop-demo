@@ -18,6 +18,8 @@ class Action extends Frontend
         $config = Pimcore\Config::getSystemConfig();
         $this->validLanguages = explode(",", $config->general->validLanguages);
 
+        $this->view->headTitle()->setSeparator(" ".("|")." ");
+
         if (\Zend_Registry::isRegistered("Zend_Locale")) {
             $locale = \Zend_Registry::get("Zend_Locale");
         } else {

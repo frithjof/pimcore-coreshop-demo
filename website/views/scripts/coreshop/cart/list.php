@@ -1,25 +1,35 @@
-<div class="container shop">
-    
+<div id="main-container" class="container">
+    <!-- Breadcrumb Starts -->
+    <ol class="breadcrumb">
+        <li><a href="<?=$this->url(array("lang" => $this->language), "coreshop_index", true)?>"><?=$this->translate("Home")?></a></li>
+        <li class="active"><a href="<?=$this->url(array("lang" => $this->language, "action" => "list"), "coreshop_cart")?>"><?=$this->translate("Shopping Cart")?></a></li>
+    </ol>
+
     <?=$this->partial("coreshop/helper/order-steps.php", array("step" => 1));?>
-    
+
+    <!-- Breadcrumb Ends -->
+    <!-- Main Heading Starts -->
+    <h2 class="main-heading text-center">
+        <?=$this->translate("Shopping Cart")?>
+    </h2>
+    <!-- Main Heading Ends -->
+    <!-- Shopping Cart Table Starts -->
+    <?php if(count($this->cart->getItems()) > 0) {
+        echo $this->template("coreshop/cart/helper/cart.php", array("edit" => true));
+    } else { ?>
+        <p><?=$this->translate("Your Shopping Cart is empty")?></p>
+    <?php } ?>
+
     <div class="row">
-        <div class="col-sm-12">
-            
-            <?php if(count($this->cart->getItems()) > 0) { 
-                echo $this->template("coreshop/cart/helper/cart.php", array("edit" => true));
-            } else { ?>
-                <p><?=$this->translate("Ihr Warenkorb ist leer")?></p>
-            <?php } ?>
-        </div>
-        <div class="col-xs-6">
-             <a href="<?=$this->url(array(), "coreshop_index")?>" type="button" class="btn btn-white btn-borderd">
-                <span class="glyphicon glyphicon-shopping-cart"></span> <?=$this->translate("Einkauf fortsetzen")?>
+        <div class="col-xs-12">
+            <a href="<?=$this->url(array("lang" => $this->language), "coreshop_index")?>" class="btn btn-default pull-left">
+                <span class="hidden-xs">Continue Shopping</span>
+                <span class="visible-xs">Continue</span>
             </a>
-        </div>
-        <div class="col-xs-6">
-            <a href="<?=$this->url(array("action" => "index", "lang" => $this->language), "coreshop_checkout")?>" type="button" class="btn btn-red btn-borderd-red pull-right">
-                <?=$this->translate("Weiter")?> <span class="glyphicon glyphicon-play"></span>
+            <a href="#" class="btn btn-default pull-right">
+                Checkout
             </a>
         </div>
     </div>
+
 </div>

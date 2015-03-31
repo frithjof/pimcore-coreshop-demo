@@ -7,8 +7,6 @@ $(document).ready(function() {
             enabled: true
         }
     });
-  
-    shop.init();
 });
 
 (function($) {

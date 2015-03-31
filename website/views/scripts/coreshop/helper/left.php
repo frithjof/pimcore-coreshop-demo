@@ -1,38 +1,10 @@
 <!-- Sidebar Starts -->
 <div class="col-md-3">
-<!-- Categories Links Starts -->
-    <h3 class="side-heading">Categories</h3>
-    <div class="list-group categories">
-        <a href="category-grid.html" class="list-group-item">
-            <i class="fa fa-chevron-right"></i>
-            Digital Cameras
-        </a>
-        <a href="category-grid.html" class="list-group-item">
-            <i class="fa fa-chevron-right"></i>
-            Sound Devices
-        </a>
-        <a href="category-grid.html" class="list-group-item">
-            <i class="fa fa-chevron-right"></i>
-            Televisions
-        </a>
-        <a href="category-grid.html" class="list-group-item">
-            <i class="fa fa-chevron-right"></i>
-            Computers
-        </a>
-        <a href="category-grid.html" class="list-group-item">
-            <i class="fa fa-chevron-right"></i>
-            Washing Machines
-        </a>
-        <a href="category-grid.html" class="list-group-item">
-            <i class="fa fa-chevron-right"></i>
-            Accessories
-        </a>
-        <a href="category-grid.html" class="list-group-item">
-            <i class="fa fa-chevron-right"></i>
-            Mobile Phones
-        </a>
-    </div>
-<!-- Categories Links Ends -->
+    <?=\CoreShop\Plugin::hook("product-left-column")?>
+
+    <?=$this->template("coreshop/helper/left/categories.php");?>
+
+<?php /*
 <!-- Special Products Starts -->
     <h3 class="side-heading">Specials</h3>
     <ul class="side-products-list">
@@ -139,5 +111,6 @@
         </div>
     </div>
 <!-- Shopping Options Ends -->
+ */?>
 </div>
 <!-- Sidebar Ends -->
