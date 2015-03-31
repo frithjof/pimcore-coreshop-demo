@@ -295,13 +295,14 @@
     </footer>
 <!-- Footer Section Ends -->
 <!-- JavaScript Files -->
-<script src="/static/js/jquery-1.11.1.min.js"></script>
-<script src="/static/js/jquery-migrate-1.2.1.min.js"></script>
-<script src="/static/js/bootstrap.min.js"></script>
-<script src="/static/js/bootstrap-hover-dropdown.min.js"></script>
-<script src="/static/js/jquery.magnific-popup.min.js"></script>
-<script src="/static/js/owl.carousel.min.js"></script>
-<script src="/static/js/purl.js"></script>
+<script src="/static/vendor/jquery-1.11.1.min.js"></script>
+<script src="/static/vendor/jquery-migrate-1.2.1.min.js"></script>
+<script src="/static/vendor/bootstrap.min.js"></script>
+<script src="/static/vendor/bootstrap-hover-dropdown.min.js"></script>
+<script src="/static/vendor/bootstrapvalidator/bootstrapValidator.min.js"></script>
+<script src="/static/vendor/jquery.magnific-popup.min.js"></script>
+<script src="/static/vendor/owl.carousel.min.js"></script>
+<script src="/static/vendor/purl.js"></script>
 <script src="/static/js/shop.js"></script>
 <script src="/static/js/custom.js"></script>
 </body>

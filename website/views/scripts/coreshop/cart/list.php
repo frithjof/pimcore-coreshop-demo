@@ -26,7 +26,7 @@
                 <span class="hidden-xs">Continue Shopping</span>
                 <span class="visible-xs">Continue</span>
             </a>
-            <a href="#" class="btn btn-default pull-right">
+            <a href="<?=$this->url(array("lang" => $this->language, "action" => "index"), "coreshop_checkout")?>" class="btn btn-default pull-right">
                 Checkout
             </a>
         </div>

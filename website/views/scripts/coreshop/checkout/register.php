@@ -1,161 +1,168 @@
-<div class="container shop checkout checkout-step-2">
-    
-    <?=$this->partial("coreshop/helper/order-steps.php", array("step" => 2));?>
-    
-    <?php
-        $class = Object_Class::getByName("User");
-    
-        $postValue = function ($name) {
-            if (isset($_POST[$name])) {
-                return $_POST[$name];
-            }
-    
-            return;
-        };
-    ?>
-    
-    <div class="row">
-        <div class="col-xs-12 col-sm-12">
-            <form role="form" action="<?=$this->url(array("lang" => $this->language, "action" => "register"), "coreshop_user")?>" method="post" id="shop-register-form">
+<?php
+//TODO: finish View
+$class = Object_Class::getByName("CoreShopUser");
 
-                <input type="hidden" name="browserName" id="browserName" />
-                <input type="hidden" name="majorVersion" id="majorVersion" />
-                <input type="hidden" name="fullVersion" id="fullVersion" />
-                <input type="hidden" name="appName" id="appName" />
-                <input type="hidden" name="userAgent" id="userAgent" />
-                <input type="hidden" name="os" id="os" />
-                <input type="hidden" name="_redirect" value="<?=$this->url(array("lang" => $this->language, "action" => "address"), "coreshop_checkout")?>" />
-                
-                <div class="row">
-                    
-                    <div class="col-xs-12">
-                    
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <h3 class="instruction text-center"><?=$this->translate("Ihre persönlichen Daten")?></h3>
+$postValue = function ($name) {
+    if (isset($_POST[$name])) {
+        return $_POST[$name];
+    }
+
+    return;
+};
+?>
+
+<div id="main-container" class="container">
+    <!-- Breadcrumb Starts -->
+    <ol class="breadcrumb">
+        <li><a href="<?=$this->url(array("lang" => $this->language), "coreshop_index", true)?>"><?=$this->translate("Home")?></a></li>
+        <li class="active"><a href="<?=$this->url(array("lang" => $this->language, "action" => "register"), "coreshop_checkout")?>"><?=$this->translate("Register")?></a></li>
+    </ol>
+
+    <?=$this->partial("coreshop/helper/order-steps.php", array("step" => 2));?>
+
+    <!-- Breadcrumb Ends -->
+    <!-- Main Heading Starts -->
+    <h2 class="main-heading text-center">
+        <?=$this->translate("Register")?> <br />
+        <span><?=$this->translate("Create New Account")?></span>
+    </h2>
+    <!-- Main Heading Ends -->
+    <!-- Registration Section Starts -->
+    <section class="registration-area">
+        <div class="row">
+            <div class="col-sm-12">
+                <!-- Registration Block Starts -->
+                <div class="panel panel-smart">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><?=$this->translate("Personal Information")?></h3>
+                    </div>
+                    <div class="panel-body">
+                        <!-- Registration Form Starts -->
+                        <form class="form-horizontal" role="form" id="shop-register-form" action="<?=$this->url(array("lang" => $this->language, "action" => "register"), "coreshop_user")?>" method="post">
+
+                            <input type="hidden" name="browserName" id="browserName" />
+                            <input type="hidden" name="majorVersion" id="majorVersion" />
+                            <input type="hidden" name="fullVersion" id="fullVersion" />
+                            <input type="hidden" name="appName" id="appName" />
+                            <input type="hidden" name="userAgent" id="userAgent" />
+                            <input type="hidden" name="os" id="os" />
+                            <input type="hidden" name="_redirect" value="<?=$this->url(array("lang" => $this->language, "action" => "address"), "coreshop_checkout")?>" />
+
+                            <!-- Personal Information Starts -->
+                            <div class="form-group">
+                                <label for="firstname" class="col-sm-3 control-label"><?=$this->translate("First Name")?> :</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="<?=$this->translate("First Name")?>">
+                                </div>
+                                <div data-for="firstname" class="col-sm-push-3 col-sm-9"></div>
                             </div>
-                        </div>
-                    
-                        <div class="row">
-                            <div class="col-xs-8 col-xs-offset-2">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="username" placeholder="<?=$this->translate("Ihr Benutzername")?>*">
-                                        </div>
+                            <div class="form-group">
+                                <label for="lastname" class="col-sm-3 control-label"><?=$this->translate("Last Name")?> :</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="<?=$this->translate("Last Name")?>">
+                                </div>
+                                <div data-for="lastname" class="col-sm-push-3 col-sm-9"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-sm-3 control-label"><?=$this->translate("Email")?> :</label>
+                                <div class="col-sm-9">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="<?=$this->translate("Email")?>">
+                                </div>
+                                <div data-for="email" class="col-sm-push-3 col-sm-9"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="reemail" class="col-sm-3 control-label"><?=$this->translate("Re-Email")?> :</label>
+                                <div class="col-sm-9">
+                                    <input type="email" class="form-control" id="reemail" name="reemail" placeholder="<?=$this->translate("Re-Email")?>">
+                                </div>
+                                <div data-for="reemail" class="col-sm-push-3 col-sm-9"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="col-sm-3 control-label"><?=$this->translate("Password")?> :</label>
+                                <div class="col-sm-9">
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="<?=$this->translate("Password")?>">
+                                </div>
+                                <div data-for="password" class="col-sm-push-3 col-sm-9"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputRePassword" class="col-sm-3 control-label"><?=$this->translate("Re-Password")?> :</label>
+                                <div class="col-sm-9">
+                                    <input type="password" class="form-control" id="repassword" name="repassword" placeholder="<?=$this->translate("Re-Password")?>">
+                                </div>
+                                <div data-for="repassword" class="col-sm-push-3 col-sm-9"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="gender" class="col-sm-3 control-label"><?=$this->translate("Gender")?></label>
+                                <div class="col-sm-9">
+                                    <select name="gender" class="form-control" title="<?=$this->translate("Geschlecht")?>">
+                                        <option></option>
+                                        <?php
+                                        $fd = $class->getFieldDefinition("gender");
+                                        $options = $fd->getOptions();
+                                        $value = $postValue("gender");
+                                        ?>
+                                        <?php foreach ($options as $option) { ?>
+                                            <?php if ($option['key']) { ?>
+                                                <option value="<?=$option['value']?>" <?=$value == $option['value'] ? "selected" : ""?>><?=$this->translate($option['key'])?></option>
+                                            <?php } ?>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                                <div data-for="gender" class="col-sm-push-3 col-sm-9"></div>
+                            </div>
+
+                            <h3 class="panel-heading inner">
+                                <?=$this->translate("Address")?>
+                            </h3>
+
+                            <?=$this->template("coreshop/user/helper/address.php") ?>
+                            <h3 class="panel-heading inner">
+                                <?=$this->translate("Newsletter")?>
+                            </h3>
+
+                            <div class="form-group">
+                                <span class="col-sm-3 control-label">Newsletter :</span>
+                                <div class="col-sm-9">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                            Subscribe
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option1">
+                                            Unsubscribe
+                                        </label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-2 col-xs-12 validation" data-for="username">
-        
-                            </div>
-                        </div>
-        
-                        <div class="row">
-                            <div class="col-xs-8 col-xs-offset-2">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6">
-                                        <div class="form-group">
-                                            <input type="password" class="form-control" name="password" placeholder="<?=$this->translate("Passwort")?>*">
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6">
-                                        <div class="form-group">
-                                            <input type="password" class="form-control" name="repassword" placeholder="<?=$this->translate("Passwort wiederholen")?>*">
-                                        </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> I'v read and agreed on Conditions
+                                        </label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-2 col-xs-12 validation" data-for="password">
-        
-                            </div>
-                        </div>
-        
-                        <div class="row">
-                            <div class="col-xs-8 col-xs-offset-2">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="email" placeholder="<?=$this->translate("Ihre E-Mail Adresse")?>*">
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="reemail" placeholder="<?=$this->translate("E-Mail Adresse wiederholen")?>*">
-                                        </div>
-                                    </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <button type="submit" class="btn btn-black">
+                                        Register
+                                    </button>
                                 </div>
                             </div>
-                            <div class="col-sm-2 col-xs-12 validation" data-for="email">
-        
-                            </div>
-                        </div>
-        
-                        <div class="row">
-                            <div class="col-xs-8 col-xs-offset-2">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="firstname" placeholder="<?=$this->translate("Vorname")?>*">
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="lastname" placeholder="<?=$this->translate("Nachname")?>*">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-2 col-xs-12 validation" data-for="firstname">
-        
-                            </div>
-                        </div>
-        
-                        <div class="row">
-                            <div class="col-xs-8 col-xs-offset-2">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6">
-                                        <div class="form-group">
-                                            <select name="gender" class="selectpicker btn-white" title="<?=$this->translate("Geschlecht")?>*">
-                                                <option></option>
-                                                <?php
-                                                    $fd = $class->getFieldDefinition("gender");
-                                                    $options = $fd->getOptions();
-                                                    $value = $postValue("gender");
-                                                ?>
-                                                <?php foreach ($options as $option) { ?>
-                                                    <?php if ($option['key']) { ?>
-                                                        <option value="<?=$option['value']?>" <?=$value == $option['value'] ? "selected" : ""?>><?=$this->translate($option['key'])?></option>
-                                                    <?php } ?>
-                                                <?php } ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-2 col-xs-12 validation" data-for="gender">
-        
-                            </div>
-                        </div>
-                        
-                        <?=$this->template("coreshop/user/helper/address.php") ?>
-                        
-                        <div class="row">
-                            <div class="col-xs-8 col-xs-offset-2">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <button class="btn btn-white btn-borderd pull-right ladda-button" type="submit">
-                                            <?=$this->translate("Registrierung abschicken")?>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-        
-                  </div>
+                            <!-- Password Area Ends -->
+                        </form>
+                        <!-- Registration Form Starts -->
+                    </div>
                 </div>
-            </form>
+                <!-- Registration Block Ends -->
+            </div>
         </div>
-    </div>
-    
+    </section>
+    <!-- Registration Section Ends -->
 </div>
+<!-- Main Container Ends -->

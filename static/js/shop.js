@@ -199,128 +199,7 @@ $(document).ready(function(){
 
         shop.addCartEventListeners();
     };
-    
-    shop.initExtraForm = function()
-    {
-        var extraFormFields = {
-        
-            firstname1: 
-            {
-                container: '[data-for=firstname1]',
-                validators: {
-                    notEmpty: {
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Vorname ist ein Pflichtfeld'
-                    }
-                }
-            },
-            lastname1: 
-            {
-                container: '[data-for=lastname1]',
-                validators : 
-                {
-                    notEmpty: 
-                    {
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Nachname ist ein Pflichtfeld'
-                    }
-                }
-            },
-    
-            birthdate1: 
-            {
-                container : '[data-for=birthdate1]',
-                validators: {
-                    notEmpty: {
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Geburtsdatum ist ein Pflichtfeld'
-                    },
-                    date: {
-                        format: 'DD.MM.YYYY',
-                        separator : '.',
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Kein gültiges Datum'
-                    }
-                }
-            },
-         
-            birthtime1: 
-            {
-                container : '[data-for=birthtime1]',
-                validators: {
-                    notEmpty: {
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Geburtszeit ist ein Pflichtfeld'
-                    },
-                    regexp: {
-                        regexp: /^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/,
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Kein gültige Zeit'
-                    }
-                }
-            },
-    
-          
-            birthzip1: 
-            {
-                container: '[data-for=birthcity1]',
-                validators : {
-                    notEmpty: {
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> PLZ ist ein Pflichtfeld'
-                    },
-                    regexp: {
-                        regexp: /^\d{4,}$/,
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> PLZ muss aus mindestens 4 Zahlen bestehen'
-                    }
-                }
-            },
-          
-            birthcity1: 
-            {
-                container: '[data-for=birthcity1]',
-                validators : 
-                {
-                    notEmpty: {
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Ort ist ein Pflichtfeld'
-                    }
-                }
-            },
-          
-            birthcountry1: 
-            {
-                container: '[data-for=birthcountry1]',
-                validators : {
-                    notEmpty: {
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Land ist ein Pflichtfeld'
-                    }
-                }
-            }
-        };
 
-        $('.product-detail-form').each(function(form) 
-        {
-            if($(this).find("[name=firstname2]").length > 0)
-            {
-                var doubleExtraFormFields = {};
-                
-                for(var field in extraFormFields)
-                {
-                    var newField = field.substring(0, field.length - 1) + "2";
-                    
-                    doubleExtraFormFields[newField] = jQuery.extend({}, extraFormFields[field]);
-                    doubleExtraFormFields[newField].container = doubleExtraFormFields[newField].container.substring(field, doubleExtraFormFields[newField].container.length - 2) + "2]";
-                }
-                
-                extraFormFields = jQuery.extend(extraFormFields, doubleExtraFormFields);
-                
-                console.log(extraFormFields);
-            }
-            
-            $(this).bootstrapValidator({
-                feedbackIcons: {
-                    valid: 'glyphicon glyphicon-ok-circle',
-                    invalid: 'glyphicon glyphicon-remove-circle',
-                },
-                excluded: ':disabled',
-                fields: extraFormFields
-            }); 
-        });
-    };
-    
     shop.initRegisterForm = function()
     {
         $('#shop-register-form').bootstrapValidator({
@@ -336,40 +215,18 @@ $(document).ready(function(){
     shop.fieldsForRegister = function()
     {
         return $.extend({
-            username: 
-            {
-                container: '[data-for=username]',
-                validators: {
-                    notEmpty: {
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Der Benutzername ist ein Pflichtfeld'
-                    },
-                    stringLength: {
-                        min: 6,
-                        max: 30,
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Der Benutzername muss zwischen 6 und 30 zeichen lang sein'
-                    },
-                    regexp: {
-                        regexp: /^[a-zA-Z0-9]+$/,
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Der Benutzername kann nur aus Alphanumerischen Zeichen bestehen'
-                    },
-                    different: {
-                        field: 'password',
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Der Benutzername und das Password müssen sich unterscheiden'
-                    }
-                }
-            },
             email: {
                 container: '[data-for=email]',
                 validators: {
                     notEmpty: {
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Die E-Mail Adresse ist ein Pflichtfeld'
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Email is required'
                     },
                     emailAddress: {
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Die E-Mail Adresse ist ungültig'
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Email is invalid'
                     },
                     identical: {
                         field: 'reemail',
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Die E-Mail Adressen müssen gleich sein'
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Email hast to be equal'
                     }
                 }
             },
@@ -378,10 +235,16 @@ $(document).ready(function(){
                 container: '[data-for=reemail]',
                 validators: 
                 {
+                    notEmpty: {
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Email is required'
+                    },
+                    emailAddress: {
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Email is invalid'
+                    },
                     identical: 
                     {
                         field: 'email',
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Die E-Mail Adressen müssen gleich sein'
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Email has to be equal'
                     }
                 }
             },
@@ -391,19 +254,19 @@ $(document).ready(function(){
                 validators: 
                 {
                     notEmpty: {
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Das Passwort ist ein Pflichtfeld'
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Password is required'
                     },
                     different: {
                         field: 'username',
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Das Passwort und der Benuzuername müssen sich unterscheiden'
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Password and Username must be different'
                     },
                     stringLength: {
                         min: 8,
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Das Passwort muss aus mindestens 8 Zeichen bestehen'
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Password must be at least 8 characters'
                     },
                     identical: {
                         field: 'repassword',
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Die Passwörter müssen gleich sein'
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Passwords has to be equal'
                     }
                 }
             },
@@ -411,9 +274,20 @@ $(document).ready(function(){
                 container: '[data-for=repassword]',
                 validators: 
                 {
+                    notEmpty: {
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Password is required'
+                    },
+                    different: {
+                        field: 'username',
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Password and Username must be different'
+                    },
+                    stringLength: {
+                        min: 8,
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Password must be at least 8 characters'
+                    },
                     identical: {
                         field: 'password',
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Die Passwörter müssen gleich sein'
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Passwords has to be equal'
                     }
                 }
             },
@@ -423,18 +297,18 @@ $(document).ready(function(){
                 container: '[data-for=firstname]',
                 validators: {
                     notEmpty: {
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Vorname ist ein Pflichtfeld'
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Firstname is required'
                     }
                 }
             },
             lastname : 
             {
-                container: '[data-for=firstname]',
+                container: '[data-for=lastname]',
                 validators : 
                 {
                     notEmpty: 
                     {
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Nachname ist ein Pflichtfeld'
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Lastname is required'
                     }
                 }
             },
@@ -446,10 +320,10 @@ $(document).ready(function(){
                 {
                     notEmpty: 
                     {
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Geschlecht ist ein Pflichtfeld'
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Gender is required'
                     }
                 }
-            }
+            },
         }, shop.fieldsForAddress());
     };
     
@@ -460,19 +334,19 @@ $(document).ready(function(){
                 container: '[data-for=adress_firstname]',
                 validators: {
                     notEmpty: {
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Vorname ist ein Pflichtfeld'
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Firstname is required'
                     }
                 }
             },
             
             address_lastname : 
             {
-                container: '[data-for=adress_firstname]',
+                container: '[data-for=adress_lastname]',
                 validators : 
                 {
                     notEmpty: 
                     {
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Nachname ist ein Pflichtfeld'
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Lastname is required'
                     }
                 }
             },
@@ -483,32 +357,32 @@ $(document).ready(function(){
                 validators : 
                 {
                     notEmpty: {
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Straße ist ein Pflichtfeld'
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Street is required'
                     }
                 }
             },
           
             address_nr : 
             {
-                container: '[data-for=address_street]',
+                container: '[data-for=address_number]',
                 validators : {
                     notEmpty: {
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Hausnummer ist ein Pflichtfeld'
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Number is required'
                     }
                 }
             },
           
             address_zip : 
             {
-                container: '[data-for=address_street]',
+                container: '[data-for=address_zip]',
                 validators : 
                 {
                     notEmpty: {
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> PLZ ist ein Pflichtfeld'
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> ZIP is required'
                     },
                     regexp: {
                         regexp: /^\d{4,}$/,
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> PLZ muss aus mindestens 4 Zahlen bestehen'
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> ZIP has to be a number'
                     }
                 }
             },
@@ -518,17 +392,27 @@ $(document).ready(function(){
                 container: '[data-for=address_city]',
                 validators : {
                     notEmpty: {
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Ort ist ein Pflichtfeld'
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> City is required'
                     }
                 }
             },
           
             address_country : 
             {
-                container: '[data-for=address_city]',
+                container: '[data-for=address_country]',
                 validators : {
                     notEmpty: {
-                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Land ist ein Pflichtfeld'
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Country is required'
+                    }
+                }
+            },
+
+            address_name:
+            {
+                container: '[data-for=address_name]',
+                validators : {
+                    notEmpty: {
+                        message: '<i class="glyphicon glyphicon-remove-circle"></i> Name is required'
                     }
                 }
             }
