@@ -7,3 +7,4 @@ db-change-*.sql
 vendor
 composer.lock
 php.log
+static/scss/.sass-cache
