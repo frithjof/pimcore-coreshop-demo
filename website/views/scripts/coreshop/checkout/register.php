@@ -122,18 +122,18 @@ $postValue = function ($name) {
                             </h3>
 
                             <div class="form-group">
-                                <span class="col-sm-3 control-label">Newsletter :</span>
+                                <span class="col-sm-3 control-label"><?=$this->translate("Newsletter")?> :</span>
                                 <div class="col-sm-9">
                                     <div class="radio">
                                         <label>
                                             <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                            Subscribe
+                                            <?=$this->translate("Subscribe")?>
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label>
                                             <input type="radio" name="optionsRadios" id="optionsRadios2" value="option1">
-                                            Unsubscribe
+                                            <?=$this->translate("Unsubscribe")?>
                                         </label>
                                     </div>
                                 </div>
@@ -142,7 +142,7 @@ $postValue = function ($name) {
                                 <div class="col-sm-offset-3 col-sm-9">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox"> I'v read and agreed on Conditions
+                                            <input type="checkbox"> <?=$this->translate("I'v read and agreed on Conditions")?>
                                         </label>
                                     </div>
                                 </div>
@@ -150,7 +150,7 @@ $postValue = function ($name) {
                             <div class="form-group">
                                 <div class="col-sm-offset-3 col-sm-9">
                                     <button type="submit" class="btn btn-black">
-                                        Register
+                                        <?=$this->translate("Register")?>
                                     </button>
                                 </div>
                             </div>

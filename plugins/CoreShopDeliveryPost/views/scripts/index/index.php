@@ -1,0 +1,2 @@
+
+CoreShopDeliveryPost Plugin works!

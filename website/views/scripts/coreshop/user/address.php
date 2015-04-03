@@ -1,23 +1,54 @@
-<div class="container shop">
-    <form role="form" action="<?=$this->url(array("lang" => $this->language, "action" => "address"), "coreshop_user")?>" method="post" id="shop-register-form">
-        
-        <? if($this->redirect) { ?>
-        <input type="hidden" name="_redirect" value="<?=$this->redirect?>" />
-        <? } ?>
-        
-        <?=$this->template("coreshop/user/helper/address.php")?>
-        
+<div id="main-container" class="container">
+    <!-- Breadcrumb Starts -->
+    <ol class="breadcrumb">
+        <li><a href="<?=$this->url(array("lang" => $this->language), "coreshop_index", true)?>"><?=$this->translate("Home")?></a></li>
+        <li class="active"><a href="<?=$this->url(array("lang" => $this->language, "action" => "index"), "coreshop_user")?>"><?=$this->translate("My Profile")?></a></li>
+        <li class="active"><a href="<?=$this->url(array("lang" => $this->language, "action" => "address"), "coreshop_user")?>"><?=$this->translate("Add a new address")?></a></li>
+    </ol>
+
+    <!-- Breadcrumb Ends -->
+    <!-- Main Heading Starts -->
+    <h2 class="main-heading text-center">
+        <?=$this->translate("Address")?> <br />
+        <span><?=$this->translate("Add a new address")?></span>
+    </h2>
+    <!-- Main Heading Ends -->
+    <!-- Registration Section Starts -->
+    <section class="registration-area">
         <div class="row">
-            <div class="col-xs-8 col-xs-offset-2">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <button class="btn btn-white btn-borderd pull-right ladda-button" type="submit">
-                            <?=$this->translate("Adresse speichern")?>
-                        </button>
+            <div class="col-sm-12">
+                <!-- Registration Block Starts -->
+                <div class="panel panel-smart">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><?=$this->translate("Personal Information")?></h3>
+                    </div>
+                    <div class="panel-body">
+                        <!-- Registration Form Starts -->
+
+                        <form role="form" action="<?=$this->url(array("lang" => $this->language, "action" => "address"), "coreshop_user")?>" class="form-horizontal" role="form" id="shop-register-form" method="post">
+        
+                            <? if($this->redirect) { ?>
+                            <input type="hidden" name="_redirect" value="<?=$this->redirect?>" />
+                            <? } ?>
+        
+                            <?=$this->template("coreshop/user/helper/address.php")?>
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <button type="submit" class="btn btn-black">
+                                        <?=$this->translate("Add");?>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Password Area Ends -->
+                        </form>
+                        <!-- Registration Form Starts -->
                     </div>
                 </div>
+                <!-- Registration Block Ends -->
             </div>
         </div>
-        
-    </form>
+    </section>
+    <!-- Registration Section Ends -->
 </div>
+<!-- Main Container Ends -->

@@ -11,107 +11,93 @@
             <?=$this->partial("coreshop/checkout/helper/address.php", array("address" => $address))?>
         </div>
     <? } ?>
-    
-    <form action="<?=$this->url(array("lang" => $this->language, "action" => "address"), "coreshop_checkout")?>" method="post">
-        <div class="row">
-            <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+
+
+
+    <div class="panel">
+        <div class="panel-body">
+            <!-- Form Starts -->
+            <form action="<?=$this->url(array("lang" => $this->language, "action" => "address"), "coreshop_checkout")?>" method="post">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="form-group">
+                            <label for="deliveryAddress"><?=$this->translate("Choose a delivery address")?>:</label>
+                            <select class="form-control" id="delivery-address" name="delivery-address">
+                                <?php foreach ($addresses as $address) { ?>
+                                    <option data-value="<?=preg_replace('/[^a-zA-Z0-9]/', '', $address->getName())?>" value="<?=$address->getName()?>"><?=$address->getName()?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6 billing-address-selector" style="display:none">
+                        <label for="deliveryAddress"><?=$this->translate("Choose a billing address")?>:</label>
+                        <div class="form-group">
+                            <select class="form-control" id="billing-address" name="billing-address">
+                                <?php foreach ($addresses as $address) { ?>
+                                    <option data-value="<?=preg_replace('/[^a-zA-Z0-9]/', '', $address->getName())?>" value="<?=$address->getName()?>"><?=$address->getName()?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                    </div>
+
+
+                </div>
                 <div class="row">
                     <div class="col-xs-12">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                <label for="deliveryAddress"><?=$this->translate("Lieferadresse")?></label>
-                            </div>
-                            <div class="col-xs-6">
-                                <div class="form-group">
-                                    <select name="deliveryAddress" class="selectpicker btn-white" title="<?=$this->translate("Lieferadresse")?>*">
-                                        <?php foreach ($addresses as $address) { ?>
-                                            <option data-value="<?=preg_replace('/[^a-zA-Z0-9]/', '', $address->getName())?>" value="<?=$address->getName()?>"><?=$address->getName()?></option>
-                                        <?php } ?>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="form-group form-group-no-border">
-                                    <label for="useDeliveryAsBilling">
-                                        <input type="checkbox" name="useDeliveryAsBilling" checked="checked" />
-                                        <?=$this->translate("Verwenden Sie die gleiche Adresse für die Rechnungsstellung")?>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="row billing-address-selector" style="display:none">
-                            <div class="col-xs-6">
-                                <label for="deliveryAddress"><?=$this->translate("Rechnungsadresse")?></label>
-                            </div>
-                            <div class="col-xs-6">
-                                <div class="form-group">
-                                    <select name="billingAddress" class="selectpicker btn-white" title="<?=$this->translate("Rechnungsadresse")?>*">
-                                        <?php foreach ($addresses as $address) { ?>
-                                            <option data-value="<?=preg_replace('/[^a-zA-Z0-9]/', '', $address->getName())?>" value="<?=$address->getName()?>"><?=$address->getName()?></option>
-                                        <?php } ?>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6">
-                            
-                            <div class="col-inner background-red">
-                                <div class="col-content">
-                                    <div class="aligned-row">
-                                        <div class="aligned-content aligned-top">
-                                            <div class="title"><?=$this->translate("Ihre Lieferadresse")?></div>
-                                            <div class="deliveryAddress">
-                                                <?=$this->partial("coreshop/checkout/helper/address.php", array("address" => $this->session->user->getAddresses()->get(0)))?>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        
-                        <div class="col-xs-12 col-sm-6">
-                            
-                            <div class="col-inner background-red">
-                                <div class="col-content">
-                                    <div class="aligned-row">
-                                        <div class="aligned-content aligned-top">
-                                            <div class="title"><?=$this->translate("Ihre Rechnungsadresse")?></div>
-                                            <div class="billingAddress">
-                                                <?=$this->partial("coreshop/checkout/helper/address.php", array("address" => $this->session->user->getAddresses()->get(0)))?>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+                        <div class="form-group form-group-no-border">
+                            <label for="useDeliveryAsBilling">
+                                <input type="checkbox" name="useDeliveryAsBilling" checked="checked" />
+                                <?=$this->translate("Use the delivery address as the billing address.")?></label>
                         </div>
                     </div>
-                    
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6">
-                            <br/>
-                            <a href="<?=$this->url(array("lang" => $this->language, "action" => "address", "redirect" => $this->url(array("lang" => $this->language, "action" => "address"))), "coreshop_user")?>" class="btn btn-red btn-bordered">
-                                <?=$this->translate("Neue Adresse erstellen")?>
-                            </a>
-                        </div>
-                        <div class="col-xs-12 col-sm-6">
-                            <br/>
-                            <button type="submit" class="btn btn-white btn-borderd pull-right">
-                                <?=$this->translate("Weiter")?>
-                            </button>
-                        </div>
-                    </div>
-                    
                 </div>
-            </div>
+
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="panel panel-smart">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <?=$this->translate("Delivery Address")?>
+                                </h4>
+                            </div>
+                            <div class="panel-body panel-delivery-address">
+                                <?=$this->partial("coreshop/checkout/helper/address.php", array("address" => $this->session->user->getAddresses()->get(0)))?>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="panel panel-smart">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <?=$this->translate("Billing Address")?>
+                                </h4>
+                            </div>
+                            <div class="panel-body panel-billing-address">
+                                <?=$this->partial("coreshop/checkout/helper/address.php", array("address" => $this->session->user->getAddresses()->get(0)))?>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <a href="<?=$this->url(array("lang" => $this->language, "action" => "address", "redirect" => $this->url(array("lang" => $this->language, "action" => "address"))), "coreshop_user")?>" class="btn btn-default pull-left">
+                            <?=$this->translate("Add a new Address")?>
+                        </a>
+
+                        <button type="submit" class="btn btn-default pull-right">
+                            <?=$this->translate("Proceed to checkout")?>
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+            <!-- Form Ends -->
         </div>
-    </form>
+    </div>
+
 </div>

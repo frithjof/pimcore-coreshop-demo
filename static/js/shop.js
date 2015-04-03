@@ -421,27 +421,26 @@ $(document).ready(function(){
     
     shop.initChangeAddress = function()
     {
-        $('select[name=deliveryAddress]').change(function(){
+        $('select[name=delivery-address]').change(function(){
             var value = $(this).val();
             
             value = $(this).find("[value='"+value+"']").data("value");
             
-            $('.deliveryAddress').html($('#address-' + value).html());
+            $('.panel-delivery-address').html($('#address-' + value).html());
             
             if($('[name=useDeliveryAsBilling]').is(":checked"))
             {
-                $('.billingAddress').html($('#address-' + value).html());
+                $('.panel-billing-address').html($('#address-' + value).html());
                 
-                $('select[name=billingAddress]').val($(this).val());
-                $('select[name=billingAddress]').selectpicker('render');
+                $('select[name=billing-address]').val($(this).val());
             }
         });
         
-        $('select[name=billingAddress]').change(function(){
+        $('select[name=billing-address]').change(function(){
             var value = $(this).val();
             value = $(this).find("[value='"+value+"']").data("value");
             
-            $('.billingAddress').html($('#address-' + value).html()); 
+            $('.panel-billing-address').html($('#address-' + value).html());
         });
         
         $('[name=useDeliveryAsBilling]').change(function(){
@@ -449,13 +448,12 @@ $(document).ready(function(){
             {
                 $('.billing-address-selector').slideUp();
                 
-                var value = $('select[name=deliveryAddress] :selected').val();
-                var htmlValue = $('select[name=deliveryAddress]').find("[value='"+value+"']").data("value");
+                var value = $('select[name=delivery-address] :selected').val();
+                var htmlValue = $('select[name=delivery-address]').find("[value='"+value+"']").data("value");
 
-                $('.billingAddress').html($('#address-' + htmlValue).html()); 
+                $('.panel-billing-address').html($('#address-' + htmlValue).html());
                 
-                $('select[name=billingAddress]').val(value);
-                $('select[name=billingAddress]').selectpicker('render');
+                $('select[name=billing-address]').val(value);
             }
             else
             {

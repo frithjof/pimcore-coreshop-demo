@@ -8177,6 +8177,28 @@ hr {
   transition: all 0.3s ease-out;
 }
 
+.delivery-options .delivery-option {
+  border: solid 1px #ccc;
+  padding: 20px 0;
+}
+.delivery-options .delivery-option .delivery-option-radio, .delivery-options .delivery-option .delivery-option-image, .delivery-options .delivery-option .delivery-option-text {
+  border-right: solid 1px #ccc;
+}
+.delivery-options .delivery-option .delivery-option-radio, .delivery-options .delivery-option .delivery-option-image, .delivery-options .delivery-option .delivery-option-text, .delivery-options .delivery-option .delivery-option-price {
+  vertical-align: middle;
+}
+
+.payment-options .payment-option {
+  border: solid 1px #ccc;
+  padding: 20px 0;
+}
+.payment-options .payment-option .payment-option-radio, .payment-options .payment-option .payment-option-image, .payment-options .payment-option .payment-option-text {
+  border-right: solid 1px #ccc;
+}
+.payment-options .payment-option .payment-option-radio, .payment-options .payment-option .payment-option-image, .payment-options .payment-option .payment-option-text, .payment-options .payment-option .payment-option-price {
+  vertical-align: middle;
+}
+
 .bs-wizard {
   margin-top: 40px;
 }
