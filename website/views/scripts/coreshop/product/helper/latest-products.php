@@ -20,7 +20,10 @@
                 <div class="item">
                     <div class="product-col">
                         <div class="image">
-                            <a href="<?=$href?>"><img src="/static/images/product-images/1.jpg" alt="product" class="img-responsive" /></a>
+                            <?php if($product->getImage() instanceof Asset_Image) { ?>
+                                <a href="<?=$href?>"><img id="product-image-<?=$product->getId()?>" src="<?=$product->getImage()->getThumbnail("coreshop_productList")?>" class="img-responsive" /></a>
+                                <hr/>
+                            <?php } ?>
                         </div>
                         <div class="caption">
                             <h4><a href="<?=$href?>"><?=$product->getName()?></a></h4>
@@ -32,7 +35,7 @@
                                 <span class="price-old">$249.50</span>
                             </div>
                             <div class="cart-button">
-                                <button type="button" class="btn btn-cart" data-id="<?=$product->getId()?>">
+                                <button type="button" class="btn btn-cart" data-id="<?=$product->getId()?>" data-img="#product-image-<?=$product->getId()?>">
                                     Add to cart
                                     <i class="fa fa-shopping-cart"></i>
                                 </button>
