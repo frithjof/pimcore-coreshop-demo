@@ -54,37 +54,46 @@
                             <ul class="nav navbar-nav pull-left">
                                 <li>
                                     <a href="<?=$this->url(array("lang" => $this->language), "coreshop_index")?>">
-                                        <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                                        <i class="fa fa-home hidden-lg hidden-md" title="<?=$this->translate("Home")?>"></i>
                                         <span class="hidden-sm hidden-xs">
                                             <?=$this->translate("Home")?>
                                         </span>
                                     </a>
                                 </li>
-
-                                <li>
-                                    <a href="<?=$this->url(array("lang" => $this->language, "action" => "profile"), "coreshop_user")?>">
-                                        <i class="fa fa-user hidden-lg hidden-md" title="My Account"></i>
-                                        <span class="hidden-sm hidden-xs">
-                                            <?=$this->translate("My Account")?>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="<?=$this->url(array("lang" => $this->language, "action" => "list"), "coreshop_cart")?>">
-                                        <i class="fa fa-shopping-cart hidden-lg hidden-md" title="Shopping Cart"></i>
-                                        <span class="hidden-sm hidden-xs">
-                                            <?=$this->translate("Shopping Cart")?>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="<?=$this->url(array("lang" => $this->language, "action" => "indeX"), "coreshop_checkout")?>">
-                                        <i class="fa fa-crosshairs hidden-lg hidden-md" title="Checkout"></i>
-                                        <span class="hidden-sm hidden-xs">
-                                            <?=$this->translate("Checkout")?>
-                                        </span>
-                                    </a>
-                                </li>
+                                <?php if($this->session->user instanceof \CoreShop\Plugin\User) { ?>
+                                    <li>
+                                        <a href="<?=$this->url(array("lang" => $this->language, "action" => "profile"), "coreshop_user")?>">
+                                            <i class="fa fa-user hidden-lg hidden-md" title="<?=$this->translate("My Account")?>"></i>
+                                            <span class="hidden-sm hidden-xs">
+                                                <?=$this->translate("My Account")?>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="<?=$this->url(array("lang" => $this->language, "action" => "list"), "coreshop_cart")?>">
+                                            <i class="fa fa-shopping-cart hidden-lg hidden-md" title="<?=$this->translate("Shopping Cart")?>"></i>
+                                            <span class="hidden-sm hidden-xs">
+                                                <?=$this->translate("Shopping Cart")?>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="<?=$this->url(array("lang" => $this->language, "action" => "index"), "coreshop_checkout")?>">
+                                            <i class="fa fa-crosshairs hidden-lg hidden-md" title="<?=$this->translate("Checkout")?>"></i>
+                                            <span class="hidden-sm hidden-xs">
+                                                <?=$this->translate("Checkout")?>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="<?=$this->url(array("lang" => $this->language, "action" => "logout"), "coreshop_user")?>">
+                                            <i class="fa fa-crosshairs hidden-lg hidden-md" title="<?=$this->translate("Logout")?>"></i>
+                                            <span class="hidden-sm hidden-xs">
+                                                <?=$this->translate("Logout")?>
+                                            </span>
+                                        </a>
+                                    </li>
+                                <?php } else { ?>
                                 <li>
                                     <a href="<?=$this->url(array("lang" => $this->language, "action" => "register"), "coreshop_user")?>">
                                         <i class="fa fa-unlock hidden-lg hidden-md" title="Register"></i>
@@ -101,6 +110,7 @@
                                         </span>
                                     </a>
                                 </li>
+                                <?php } ?>
                             </ul>
                         </div>
                     </div>

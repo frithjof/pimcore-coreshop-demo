@@ -2,7 +2,7 @@
     <!-- Breadcrumb Starts -->
     <ol class="breadcrumb">
         <li><a href="<?=$this->url(array("lang" => $this->language), "coreshop_index", true)?>"><?=$this->translate("Home")?></a></li>
-        <li class="active"><a href="<?=$this->url(array("lang" => $this->language, "action" => "index"), "coreshop_user")?>"><?=$this->translate("My Profile")?></a></li>
+        <li class="active"><a href="<?=$this->url(array("lang" => $this->language, "action" => "profile"), "coreshop_user")?>"><?=$this->translate("My Profile")?></a></li>
         <li class="active"><a href="<?=$this->url(array("lang" => $this->language, "action" => "address"), "coreshop_user")?>"><?=$this->translate("Add a new address")?></a></li>
     </ol>
 
@@ -36,7 +36,14 @@
                             <div class="form-group">
                                 <div class="col-sm-offset-3 col-sm-9">
                                     <button type="submit" class="btn btn-black">
-                                        <?=$this->translate("Add");?>
+                                        <?php
+                                        if($this->isNew) {
+                                            echo $this->translate("Add");
+                                        } else {
+                                            echo $this->translate("Save");
+                                        }
+
+                                        ?>
                                     </button>
                                 </div>
                             </div>

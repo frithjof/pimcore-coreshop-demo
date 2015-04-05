@@ -2,10 +2,8 @@
     <!-- Breadcrumb Starts -->
     <ol class="breadcrumb">
         <li><a href="<?=$this->url(array("lang" => $this->language), "coreshop_index", true)?>"><?=$this->translate("Home")?></a></li>
-        <li class="active"><a href="<?=$this->url(array("lang" => $this->language, "action" => "index"), "coreshop_checkout")?>"><?=$this->translate("Login")?></a></li>
+        <li class="active"><a href="<?=$this->url(array("lang" => $this->language, "action" => "login"), "coreshop_user")?>"><?=$this->translate("Login")?></a></li>
     </ol>
-
-    <?=$this->partial("coreshop/helper/order-steps.php", array("step" => 2));?>
 
     <!-- Breadcrumb Ends -->
     <!-- Main Heading Starts -->
@@ -33,8 +31,7 @@
                         </p>
                         <!-- Login Form Starts -->
                         <form class="form-inline" role="form" method="post" action="<?=$this->url(array("lang" => $this->language, "action" => "login"), "coreshop_user")?>">
-                            <input type="hidden" name="_redirect" value="<?=$this->url(array("lang" =>  $this->language, "action" => "address"), "coreshop_checkout")?>" />
-                            <input type="hidden" name="_base" value="<?=$this->url(array("lang" =>  $this->language, "action" => "index"), "coreshop_checkout")?>" />
+                            <input type="hidden" name="_redirect" value="<?=$this->url(array("lang" =>  $this->language), "coreshop_index")?>" />
 
                             <div class="form-group">
                                 <label class="sr-only" for="email"><?=$this->translate("Email")?></label>
@@ -65,7 +62,7 @@
                         <p>
                             <?=$this->translate("Registration allows you to avoid filling in billing and shipping forms every time you checkout on this website")?>
                         </p>
-                        <a href="<?=$this->url(array("lang" => $this->language, "action" => "register"), "coreshop_checkout")?>" class="btn btn-black">
+                        <a href="<?=$this->url(array("lang" => $this->language, "action" => "register"), "coreshop_user")?>" class="btn btn-black">
                             <?=$this->translate("Register")?>
                         </a>
                     </div>
