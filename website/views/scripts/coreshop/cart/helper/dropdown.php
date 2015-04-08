@@ -53,7 +53,7 @@
                 <a href="<?=$this->url(array("lang" => $this->language, "action" => "list"), "coreshop_cart")?>">
                     <?=$this->translate("View Cart")?>
                 </a>
-                <a href="<?=$this->url(array("lang" => $this->language, "action" => "list"), "coreshop_cart")?>">
+                <a href="<?=$this->url(array("lang" => $this->language, "action" => "index"), "coreshop_checkout")?>">
                     <?=$this->translate("Checkout")?>
                 </a>
             </p>

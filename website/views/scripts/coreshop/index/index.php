@@ -1,13 +1,17 @@
 <!-- Main Container Starts -->
 <div id="main-container-home" class="container">
     <div class="row">
-    <?=$this->template("coreshop/helper/left.php")?>
-    <!-- Primary Content Starts -->
+        <?=$this->template("coreshop/helper/left.php")?>
+        <!-- Primary Content Starts -->
         <div class="col-md-9">
-        <!-- Slider Section Starts -->
+            <div class="special">
+                <?=$this->product("product_xy");?>
+                <?=$this->href("href_xy");?>
+            </div>
+            <!-- Slider Section Starts -->
             <div class="slider">
                 <div id="main-carousel" class="carousel slide" data-ride="carousel">
-                <!-- Wrapper For Slides Starts -->
+                    <!-- Wrapper For Slides Starts -->
                     <div class="carousel-inner">
                         <div class="item active">
                             <img src="/static/images/slider-imgs/slide1-img.jpg" alt="Slider" class="img-responsive" />
@@ -16,19 +20,19 @@
                             <img src="/static/images/slider-imgs/slide2-img.jpg" alt="Slider" class="img-responsive" />
                         </div>
                     </div>
-                <!-- Wrapper For Slides Ends -->
-                <!-- Controls Starts -->
+                    <!-- Wrapper For Slides Ends -->
+                    <!-- Controls Starts -->
                     <a class="left carousel-control" href="#main-carousel" role="button" data-slide="prev">
                         <span class="glyphicon glyphicon-chevron-left"></span>
                     </a>
                     <a class="right carousel-control" href="#main-carousel" role="button" data-slide="next">
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </a>
-                <!-- Controls Ends -->
+                    <!-- Controls Ends -->
                 </div>
             </div>
-        <!-- Slider Section Ends -->
-        <!-- 2 Column Banners Starts -->
+            <!-- Slider Section Ends -->
+            <!-- 2 Column Banners Starts -->
             <div class="col2-banners">
                 <ul class="row list-unstyled">
                     <li class="col-sm-8">
@@ -39,18 +43,18 @@
                     </li>
                 </ul>
             </div>
-        <!-- 2 Column Banners Ends -->
+            <!-- 2 Column Banners Ends -->
 
-        <?=$this->template("coreshop/product/helper/latest-products.php");?>
+            <?=$this->template("coreshop/product/helper/latest-products.php");?>
 
-        <!-- Specials Products Starts -->
+            <!-- Specials Products Starts -->
             <section class="products-list">
-            <!-- Heading Starts -->
+                <!-- Heading Starts -->
                 <h2 class="product-head">Specials Products</h2>
-            <!-- Heading Ends -->
-            <!-- Products Row Starts -->
+                <!-- Heading Ends -->
+                <!-- Products Row Starts -->
                 <div class="row">
-                <!-- Product #1 Starts -->
+                    <!-- Product #1 Starts -->
                     <div class="col-md-4 col-sm-6">
                         <div class="product-col">
                             <div class="image">
@@ -76,8 +80,8 @@
                             </div>
                         </div>
                     </div>
-                <!-- Product #1 Ends -->
-                <!-- Product #2 Starts -->
+                    <!-- Product #1 Ends -->
+                    <!-- Product #2 Starts -->
                     <div class="col-md-4 col-sm-6">
                         <div class="product-col">
                             <div class="image">
@@ -103,8 +107,8 @@
                             </div>
                         </div>
                     </div>
-                <!-- Product #2 Ends -->
-                <!-- Product #3 Starts -->
+                    <!-- Product #2 Ends -->
+                    <!-- Product #3 Starts -->
                     <div class="col-md-4 col-sm-6">
                         <div class="product-col">
                             <div class="image">
@@ -130,13 +134,13 @@
                             </div>
                         </div>
                     </div>
-                <!-- Product #3 Ends -->
+                    <!-- Product #3 Ends -->
                 </div>
-            <!-- Products Row Ends -->
+                <!-- Products Row Ends -->
             </section>
-        <!-- Specials Products Ends -->
+            <!-- Specials Products Ends -->
         </div>
-    <!-- Primary Content Ends -->
+        <!-- Primary Content Ends -->
     </div>
 </div>
 <!-- Main Container Ends -->
