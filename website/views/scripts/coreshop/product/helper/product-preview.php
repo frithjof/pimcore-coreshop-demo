@@ -11,11 +11,10 @@
     <div class="caption">
         <h4><a href="<?=$href?>"><?=$this->product->getName()?></a></h4>
         <div class="description">
-            We are so lucky living in such a wonderful time. Our almost unlimited ...
+            <?=$this->product->getShortDescription()?>
         </div>
         <div class="price">
-            <span class="price-new">$199.50</span>
-            <span class="price-old">$249.50</span>
+            <span class="price-new"><?=\CoreShop\Tool::formatPrice($this->product->getPrice())?></span>
         </div>
         <div class="cart-button">
             <button type="button" class="btn btn-cart" data-id="<?=$this->product->getId()?>" data-img="#product-image-<?=$this->product->getId()?>">
