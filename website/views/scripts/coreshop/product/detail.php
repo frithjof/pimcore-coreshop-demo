@@ -59,7 +59,7 @@
                 <!-- Price Starts -->
                     <div class="price">
                         <span class="price-head"><?=$this->translate("Price")?> :</span>
-                        <span class="price-new"><?=\CoreShop\Tool::formatPrice($this->product->getPrice());?></span>
+                        <span class="price-new"><?=\CoreShop\Tool::formatPrice($this->product->getProductPrice());?></span>
                     </div>
                 <!-- Price Ends -->
                     <hr />

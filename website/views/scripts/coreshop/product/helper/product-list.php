@@ -11,8 +11,7 @@
                 <?=$this->product->getShortDescription()?>
             </div>
             <div class="price">
-                <p class="price-tax"><?=$this->translate("Ex Tax")?>: <?=\CoreShop\Tool::formatPrice($this->product->getRetailPrice())?></p>
-                <span class="price-new"><?=\CoreShop\Tool::formatPrice($this->product->getPrice())?></span>
+                <span class="price-new"><?=\CoreShop\Tool::formatPrice($this->product->getProductPrice())?></span>
 <!--                <span class="price-old">$249.50</span>-->
             </div>
             <div class="cart-button button-group">

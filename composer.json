@@ -3,7 +3,8 @@
         "document-root-path": "./"
     },
     "require": {
-        "pimcore-extensions/manager": "dev-master"
+        "pimcore-extensions/manager": "dev-master",
+        "geoip/geoip": "~1.14"
     },
     "minimum-stability": "dev"
 }
