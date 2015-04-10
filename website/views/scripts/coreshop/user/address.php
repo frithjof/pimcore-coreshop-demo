@@ -3,6 +3,7 @@
     <ol class="breadcrumb">
         <li><a href="<?=$this->url(array("lang" => $this->language), "coreshop_index", true)?>"><?=$this->translate("Home")?></a></li>
         <li class="active"><a href="<?=$this->url(array("lang" => $this->language, "action" => "profile"), "coreshop_user")?>"><?=$this->translate("My Profile")?></a></li>
+        <li class="active"><a href="<?=$this->url(array("lang" => $this->language, "action" => "addresses"), "coreshop_user")?>"><?=$this->translate("Adresses")?></a></li>
         <li class="active"><a href="<?=$this->url(array("lang" => $this->language, "action" => "address"), "coreshop_user")?>"><?=$this->translate("Add a new address")?></a></li>
     </ol>
 

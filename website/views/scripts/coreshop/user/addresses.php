@@ -36,7 +36,7 @@
         </div>
         <div class="row">
             <div class="col-xs-12">
-                <a href="<?=$this->url(array("lang" => $this->language, "action" => "address", "_redirect" => $this->url(array("lang" => $this->language, "action" => "addresses"), "coreshop_user")), "coreshop_user")?>" class="btn btn-default">
+                <a href="<?=$this->url(array("lang" => $this->language, "action" => "address", "_redirect" => $this->url(array("lang" => $this->language, "action" => "addresses"), "coreshop_user")), "coreshop_user", true)?>" class="btn btn-default">
                     <?=$this->translate("Add New");?>
                 </a>
             </div>

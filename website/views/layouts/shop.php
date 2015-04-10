@@ -120,20 +120,20 @@
 
                         <div class="pull-right">
 
-                            <?php /*<!-- Currency Starts -->
+                            <!-- Currency Starts -->
                             <div class="btn-group">
                                 <button class="btn btn-link dropdown-toggle" data-toggle="dropdown">
-                                    Currency
+                                    <?=$this->translate("Currency")?>
                                     <i class="fa fa-caret-down"></i>
                                 </button>
                                 <ul class="pull-right dropdown-menu">
-                                    <li><a tabindex="-1" href="#">Pound </a></li>
-                                    <li><a tabindex="-1" href="#">US Dollar</a></li>
-                                    <li><a tabindex="-1" href="#">Euro</a></li>
+                                    <?php foreach(\Pimcore\Model\Object\CoreShopCurrency::getAvailable() as $currency) { ?>
+                                    <li><a tabindex="-1" href="<?=substr($this->url(array("currency" => $currency->getId())), 1)?>"><?=$currency->getName()?> </a></li>
+                                    <?php } ?>
                                 </ul>
                             </div>
                         <!-- Currency Ends -->
-                        */?>
+
                         <!-- Languages Starts -->
                             <div class="btn-group">
                                 <button class="btn btn-link dropdown-toggle" data-toggle="dropdown">

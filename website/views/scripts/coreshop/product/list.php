@@ -30,26 +30,26 @@
 
             <div class="row cat-subs">
                 <?php
-                    $subCategories = $this->category->getChildCategories();
+                $subCategories = $this->category->getChildCategories();
 
-                    foreach($subCategories as $cat) {
-                ?>
-                <div class="col-sm-3">
-                    <div class="image">
-                        <?php if($cat->getImage() instanceof \Pimcore\Model\Asset\Image) { ?>
+                foreach($subCategories as $cat) {
+                    ?>
+                    <div class="col-sm-3">
+                        <div class="image">
+                            <?php if($cat->getImage() instanceof \Pimcore\Model\Asset\Image) { ?>
+                                <a href="<?=$this->url(array("lang" => $this->language, "name" => $cat->getName(), "category" => $cat->getId()), "coreshop_list")?>">
+                                    <img src="<?=$cat->getImage()->getThumbnail("coreshop_categoryThumbnail")?>" alt="<?=$cat->getName()?>" title="<?=$cat->getName()?>" class="img-responsive img-thumbnail" />
+                                </a>
+                            <?php } else { ?>
+                                <img src="/static/images/category/placeholder.png" class="img-responsive img-thumbnail" />
+                            <?php } ?>
+                        </div>
+                        <div class="caption">
                             <a href="<?=$this->url(array("lang" => $this->language, "name" => $cat->getName(), "category" => $cat->getId()), "coreshop_list")?>">
-                                <img src="<?=$cat->getImage()->getThumbnail("coreshop_categoryThumbnail")?>" alt="<?=$cat->getName()?>" title="<?=$cat->getName()?>" class="img-responsive img-thumbnail" />
+                                <?=$cat->getName()?>
                             </a>
-                        <?php } else { ?>
-                            <img src="/static/images/category/placeholder.png" class="img-responsive img-thumbnail" />
-                        <?php } ?>
+                        </div>
                     </div>
-                    <div class="caption">
-                        <a href="<?=$this->url(array("lang" => $this->language, "name" => $cat->getName(), "category" => $cat->getId()), "coreshop_list")?>">
-                            <?=$cat->getName()?>
-                        </a>
-                    </div>
-                </div>
                 <?php } ?>
             </div>
 
@@ -72,12 +72,12 @@
                     </div>
                     <div class="col-md-3 text-right">
                         <?php
-                            $sorting = array(
-                                "NAME_DESC" => $this->translate("Name (A - Z)"),
-                                "NAME_ASC" => $this->translate("Name (Z - A)"),
-                                "PRICE_ASC" => $this->translate("Price ascending"),
-                                "PRICE_DESC" => $this->translate("Price descending")
-                            );
+                        $sorting = array(
+                            "NAME_DESC" => $this->translate("Name (A - Z)"),
+                            "NAME_ASC" => $this->translate("Name (Z - A)"),
+                            "PRICE_ASC" => $this->translate("Price ascending"),
+                            "PRICE_DESC" => $this->translate("Price descending")
+                        );
                         ?>
                         <select class="form-control site-reload" name="sort">
                             <?php foreach($sorting as $key=>$value) { ?>
@@ -101,11 +101,11 @@
 
             <div class="row">
                 <?php
-                    $type = $this->type;
+                $type = $this->type;
 
-                    foreach($this->paginator as $product) {
-                        echo $this->template("coreshop/product/helper/product-$type.php", array("product" => $product));
-                    }
+                foreach($this->paginator as $product) {
+                    echo $this->template("coreshop/product/helper/product-$type.php", array("product" => $product));
+                }
                 ?>
             </div>
             <!-- Product List Display Ends -->
