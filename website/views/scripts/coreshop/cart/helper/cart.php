@@ -74,7 +74,7 @@
             <?php
             $deliveryFee = 0;
 
-            if(array_key_exists("deliveryProvider", $this->session->order) && $this->session->order['deliveryProvider'] instanceof CoreShop_Interface_Delivery) {
+            if(array_key_exists("deliveryProvider", $this->session->order) && $this->session->order['deliveryProvider'] instanceof \CoreShop\Plugin\Delivery) {
                 $deliveryFee = $this->session->order['deliveryProvider']->getDeliveryFee($this->cart);
             }
             ?>
