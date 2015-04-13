@@ -1,5 +1,4 @@
-<?php
-    $excludeBricks = $this->param("excludeBricks", array());
-    $extraBricks = $this->param("extraBricks", array());
-
-    echo $this->template("bootstrap/area.php", array("name" => $this->name, "excludeBricks" => $excludeBricks, "extraBricks" => $extraBricks));
+<?php echo $this->areablock("content", array(
+    "allowed" => array("row")
+));
+?>

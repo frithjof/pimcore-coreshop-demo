@@ -136,7 +136,7 @@
                         <!-- Languages Starts -->
                             <div class="btn-group">
                                 <button class="btn btn-link dropdown-toggle" data-toggle="dropdown">
-                                    Language
+                                    <?=$this->translate("Language")?>
                                     <i class="fa fa-caret-down"></i>
                                 </button>
                                 <ul class="pull-right dropdown-menu">
@@ -199,111 +199,12 @@
 <!-- Footer Section Starts -->
     <footer id="footer-area">
     <!-- Footer Links Starts -->
-        <div class="footer-links">
-        <!-- Container Starts -->
-            <div class="container">
-                <!-- Information Links Starts -->
-                    <div class="col-md-2 col-sm-6">
-                        <h5>Information</h5>
-                        <ul>
-                            <li><a href="about.html"><?=$this->translate("About Us")?></a></li>
-                            <li><a href="#"><?=$this->translate("Delivery Information")?></a></li>
-                            <li><a href="#"><?=$this->translate("Privacy Policy")?></a></li>
-                            <li><a href="#"><?=$this->translate("Terms &amp; Conditions")?></a></li>
-                        </ul>
-                    </div>
-                <!-- Information Links Ends -->
-                <!-- My Account Links Starts -->
-                    <div class="col-md-2 col-sm-6">
-                        <h5><?=$this->translate("My Account")?></h5>
-                        <ul>
-                            <li><a href="#"><?=$this->translate("My orders")?></a></li>
-                            <li><a href="#"><?=$this->translate("My merchandise returns")?></a></li>
-                            <li><a href="#"><?=$this->translate("My credit slips")?></a></li>
-                            <li><a href="#"><?=$this->translate("My addresses")?></a></li>
-                            <li><a href="#"><?=$this->translate("My personal info")?></a></li>
-                        </ul>
-                    </div>
-                <!-- My Account Links Ends -->
-                <!-- Customer Service Links Starts -->
-                    <div class="col-md-2 col-sm-6">
-                        <h5><?=$this->translate("Service")?></h5>
-                        <ul>
-                            <li><a href="contact.html"><?=$this->translate("Contact Us")?></a></li>
-                            <li><a href="#"><?=$this->translate("Returns")?></a></li>
-                            <li><a href="#"><?=$this->translate("Site Map")?></a></li>
-                            <li><a href="#"><?=$this->translate("Affiliates")?></a></li>
-                            <li><a href="#"><?=$this->translate("Specials")?></a></li>
-                        </ul>
-                    </div>
-                <!-- Customer Service Links Ends -->
-                <!-- Follow Us Links Starts -->
-                    <div class="col-md-2 col-sm-6">
-                        <h5>Follow Us</h5>
-                        <ul>
-                            <li><a href="#">Facebook</a></li>
-                            <li><a href="#">Twitter</a></li>
-                            <li><a href="#">RSS</a></li>
-                            <li><a href="#">YouTube</a></li>
-                        </ul>
-                    </div>
-                <!-- Follow Us Links Ends -->
-                <!-- Contact Us Starts -->
-                    <div class="col-md-4 col-sm-12 last">
-                        <h5>Contact Us</h5>
-                        <ul>
-                            <li>My Company</li>
-                            <li>
-                                1247 LB Nagar Road, Hyderabad, Telangana - 35
-                            </li>
-                            <li>
-                                Email: <a href="#">info@demolink.com</a>
-                            </li>
-                        </ul>
-                        <h4 class="lead">
-                            Tel: <span>1(234) 567-9842</span>
-                        </h4>
-                    </div>
-                <!-- Contact Us Ends -->
-            </div>
-        <!-- Container Ends -->
-        </div>
-    <!-- Footer Links Ends -->
-    <!-- Copyright Area Starts -->
-        <div class="copyright">
-        <!-- Container Starts -->
-            <div class="container">
-            <!-- Starts -->
-                <p class="pull-left">
-                    &copy; 2015 lineofcode Dominik Pfaffenbauer. Designed By <a href="http://sainathchillapuram.com">Sainath Chillapuram</a>
-                </p>
-            <!-- Ends -->
-            <!-- Payment Gateway Links Starts -->
-                <ul class="pull-right list-inline">
-                    <li>
-                        <img src="/static/images/payment-icon/cirrus.png" alt="PaymentGateway" />
-                    </li>
-                    <li>
-                        <img src="/static/images/payment-icon/paypal.png" alt="PaymentGateway" />
-                    </li>
-                    <li>
-                        <img src="/static/images/payment-icon/visa.png" alt="PaymentGateway" />
-                    </li>
-                    <li>
-                        <img src="/static/images/payment-icon/mastercard.png" alt="PaymentGateway" />
-                    </li>
-                    <li>
-                        <img src="/static/images/payment-icon/americanexpress.png" alt="PaymentGateway" />
-                    </li>
-                </ul>
-            <!-- Payment Gateway Links Ends -->
-            </div>
-        <!-- Container Ends -->
-        </div>
+        <?=$this->inc("/" . $this->language . "/snippet/footer")?>
     <!-- Copyright Area Ends -->
     </footer>
 <!-- Footer Section Ends -->
 <!-- JavaScript Files -->
+<script src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false"></script>
 <script src="/static/vendor/jquery-1.11.1.min.js"></script>
 <script src="/static/vendor/jquery-migrate-1.2.1.min.js"></script>
 <script src="/static/vendor/bootstrap.min.js"></script>
@@ -313,6 +214,7 @@
 <script src="/static/vendor/owl.carousel.min.js"></script>
 <script src="/static/vendor/purl.js"></script>
 <script src="/static/js/shop.js"></script>
+<script src="/static/js/map.js"></script>
 <script src="/static/js/custom.js"></script>
 </body>
 </html>
