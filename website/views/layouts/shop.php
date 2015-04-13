@@ -18,7 +18,6 @@
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400" rel="stylesheet" type="text/css">
 
     <!-- CSS Files -->
-    <link href="/static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="/static/css/owl.carousel.css" rel="stylesheet">
     <link href="/static/css/shop.css" rel="stylesheet">
 
@@ -41,7 +40,7 @@
     <link rel="shortcut icon" href="/static/images/fav.png">
 
 </head>
-<body>
+<body class="lang-<?=$this->language?>">
 <!-- Header Section Starts -->
     <header id="header-area">
     <!-- Header Top Starts -->

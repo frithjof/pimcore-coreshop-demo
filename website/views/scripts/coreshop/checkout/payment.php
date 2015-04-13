@@ -13,7 +13,7 @@
                 <h3 class="panel-title"><?=$this->translate("Payment")?></h3>
             </div>
             <div class="panel-body payment-options">
-                <? foreach($this->provider as $provider) { ?>
+                <?php foreach($this->provider as $provider) { ?>
 
                     <table class="table table-unstyled payment-option">
 
@@ -23,9 +23,9 @@
                                 <input class="delivery_option_radio" type="radio" name="payment_provider[<?=$provider->getIdentifier()?>]" checked="checked">
                             </td>
                             <td class="col-xs-3 payment-option-image">
-                                <? if($provider->getImage()) { ?>
+                                <?php if($provider->getImage()) { ?>
                                     <img src="<?=$provider->getImage()?>" class="img-responsive" alt="<?=$provider->getName()?>">
-                                <? } ?>
+                                <?php } ?>
                             </td>
                             <td class="payment-option-text">
                                 <strong><?=$provider->getName()?></strong> <?=$provider->getDescription()?>

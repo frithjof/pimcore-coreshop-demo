@@ -10,7 +10,7 @@
         <div class="hidden" id="address-<?=preg_replace('/[^a-zA-Z0-9]/', '', $address->getName())?>">
             <?=$this->partial("coreshop/checkout/helper/address.php", array("address" => $address))?>
         </div>
-    <? } ?>
+    <?php } ?>
 
 
 

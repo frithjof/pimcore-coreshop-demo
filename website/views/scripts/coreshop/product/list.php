@@ -59,10 +59,10 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="display">
-                            <a href="<?=$this->url(array("type" => "list"))?>" class="<?=$this->type == "list" ? "active" : ""?>">
+                            <a href="<?=substr($this->url(array("type" => "list")), 1)?>" class="<?=$this->type == "list" ? "active" : ""?>">
                                 <i class="fa fa-th-list" title="" data-original-title="<?=$this->translate("List View")?>"></i>
                             </a>
-                            <a href="<?=$this->url(array("type" => "grid"))?>" class="<?=$this->type == "grid" ? "active" : ""?>">
+                            <a href="<?=substr($this->url(array("type" => "grid")), 1)?>" class="<?=$this->type == "grid" ? "active" : ""?>">
                                 <i class="fa fa-th" title="" data-original-title="<?=$this->translate("Grid View")?>"></i>
                             </a>
                         </div>

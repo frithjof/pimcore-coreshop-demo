@@ -1,3 +1,4 @@
+<?php if(count($this->products) > 0) { ?>
 <section class="product-carousel">
     <div class="product-info-box">
     <h4 class="heading"><?=$this->translate("WE RECOMMEND")?></h4>
@@ -43,3 +44,4 @@
         </div>
     </div>
 </section>
+<?php } ?>

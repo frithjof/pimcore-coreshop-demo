@@ -10020,6 +10020,23 @@ hr {
 }
 
 /* Product Page Styles Starts */
+.image-new-badge {
+  position: absolute;
+  top: 0;
+  left: 15px;
+  width: 65px;
+  height: 65px;
+  background-image: url("/static/images/product/new-badge-en.png");
+}
+
+.lang-de .image-new-badge {
+  background-image: url("/static/images/product/new-badge-de.png");
+}
+
+.owl-item .image-new-badge {
+  left: 5px;
+}
+
 .product-info {
   padding-top: 10px;
 }

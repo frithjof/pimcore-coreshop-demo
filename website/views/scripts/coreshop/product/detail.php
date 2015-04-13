@@ -21,10 +21,14 @@
             <!-- Left Starts -->
                 
                 <div class="col-sm-5 images-block">
-                    <?php if($this->product->getImages() > 0) { ?>
-                    <p>
+                    <?php if($this->product->getImage() instanceof \Pimcore\Model\Asset\Image) { ?>
+                        <?php if($this->product->getIsNew()) { ?>
+                            <div class="image-new-badge"></div>
+                        <?php } ?>
+
                         <img src="<?=$this->product->getImage()->getThumbnail("coreshop_productDetail")?>?>" alt="<?=$this->product->getName()?>" id="product-image-<?=$this->product->getId()?>" class="img-responsive thumbnail" />
-                    </p>
+                    <?php } ?>
+                    <?php if(count($this->product->getImages()) > 0) { ?>
                     <ul class="list-unstyled list-inline">
                         <?php foreach($this->product->getImages() as $image) { ?>
                         <li>
@@ -55,12 +59,15 @@
                         <?=$this->product->getShortDescription()?>
                     </div>
                 <!-- Manufacturer Ends -->
-                    <hr />
+
                 <!-- Price Starts -->
-                    <div class="price">
-                        <span class="price-head"><?=$this->translate("Price")?> :</span>
-                        <span class="price-new"><?=\CoreShop\Tool::formatPrice($this->product->getProductPrice());?></span>
-                    </div>
+                    <?php if($this->product->getAvailableForOrder()) { ?>
+                        <hr />
+                        <div class="price">
+                            <span class="price-head"><?=$this->translate("Price")?> :</span>
+                            <span class="price-new"><?=\CoreShop\Tool::formatPrice($this->product->getProductPrice());?></span>
+                        </div>
+
                 <!-- Price Ends -->
                     <hr />
                 <!-- Available Options Starts -->
@@ -82,6 +89,7 @@
                             </button>
                         </div>
                     </div>
+                    <?php } ?>
                 <!-- Available Options Ends -->
                     <hr />
                 </div>

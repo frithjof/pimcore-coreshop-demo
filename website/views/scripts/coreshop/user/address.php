@@ -28,9 +28,9 @@
 
                         <form role="form" action="<?=$this->url(array("lang" => $this->language, "action" => "address"), "coreshop_user")?>" class="form-horizontal" role="form" id="shop-register-form" method="post">
         
-                            <? if($this->redirect) { ?>
+                            <?php if($this->redirect) { ?>
                             <input type="hidden" name="_redirect" value="<?=$this->redirect?>" />
-                            <? } ?>
+                            <?php } ?>
         
                             <?=$this->template("coreshop/user/helper/address.php")?>
 

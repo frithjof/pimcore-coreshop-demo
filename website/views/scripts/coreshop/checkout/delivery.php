@@ -8,7 +8,7 @@
                 <h3 class="panel-title"><?=$this->translate("Shipping")?></h3>
             </div>
             <div class="panel-body delivery-options">
-                <? foreach($this->provider as $provider) { ?>
+                <?php foreach($this->provider as $provider) { ?>
 
                     <table class="table table-unstyled delivery-option">
 
@@ -18,9 +18,9 @@
                                 <input class="delivery_option_radio" type="radio" name="delivery_provider[<?=$provider->getIdentifier()?>]" checked="checked">
                             </td>
                             <td class="delivery-option-image col-xs-3">
-                                <? if($provider->getImage()) { ?>
+                                <?php if($provider->getImage()) { ?>
                                     <img src="<?=$provider->getImage()?>" class="img-responsive" alt="<?=$provider->getName()?>">
-                                <? } ?>
+                                <?php } ?>
                             </td>
                             <td class="delivery-option-text">
                                 <strong><?=$provider->getName()?></strong> <?=$provider->getDescription()?>
@@ -32,7 +32,7 @@
 
                     </table>
 
-                <? } ?>
+                <?php } ?>
 
                 <div class="row">
                     <div class="col-xs-12">

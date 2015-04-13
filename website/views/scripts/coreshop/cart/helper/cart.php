@@ -32,11 +32,11 @@
             ?>
             <tr class="shopping-cart-item shopping-cart-item-<?=$item->getId()?>">
                 <td class="text-center">
-                    <? if($item->getProduct()->getImage() instanceof Asset_Image) { ?>
+                    <?php if($item->getProduct()->getImage() instanceof Asset_Image) { ?>
                         <a class="" href="<?=$href?>">
                             <img class="img-thumbnail" src="<?=$item->getProduct()->getImage()->getThumbnail("coreshop_productCart")?>" alt="<?=$item->getProduct()->getName()?>" title="<?=$item->getProduct()->getName()?>" />
                         </a>
-                    <? } ?>
+                    <?php } ?>
                 </td>
                 <td class="text-center">
                     <a href="<?=$href?>"><?=$item->getProduct()->getName()?></a>
