@@ -96,6 +96,7 @@
             <!-- Right Ends -->
             </div>
         <!-- product Info Ends -->
+            <?php if(strlen($this->product->getDescription()) > 0) {?>
         <!-- Product Description Starts -->
             <div class="product-info-box">
                 <h4 class="heading"><?=$this->translate("Description")?></h4>
@@ -104,8 +105,9 @@
                 </div>
             </div>
         <!-- Product Description Ends -->
-        
-        <?=\CoreShop\Plugin::hook("product-detail-bottom", array("product" => $this->product))?>
+            <?php } ?>
+
+            <?=\CoreShop\Plugin::hook("product-detail-bottom", array("product" => $this->product))?>
         
         
         </div>

@@ -162,16 +162,16 @@
                 <div class="row">
                 <!-- Search Starts -->
                     <div class="col-md-3">
-                        <div id="search">
+                        <form id="search" method="get" action="<?=$this->url(array("lang" => $this->language), "coreshop_search", true)?>">
                             <div class="input-group">
-                              <input type="text" class="form-control input-lg" placeholder="Search">
+                              <input type="text" name="text" class="form-control input-lg" placeholder="<?=$this->translate("Search")?>">
                               <span class="input-group-btn">
                                 <button class="btn btn-lg" type="button">
                                     <i class="fa fa-search"></i>
                                 </button>
                               </span>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 <!-- Search Ends -->
                 <!-- Logo Starts -->
