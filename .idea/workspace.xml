@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2ab43a8-7b0e-40d3-81e6-74e26d92fb22" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/views/scripts/coreshop/search/search.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/CoreShop" afterPath="$PROJECT_DIR$/plugins/CoreShop" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/views/scripts/coreshop/product/detail.php" afterPath="$PROJECT_DIR$/website/views/scripts/coreshop/product/detail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/views/layouts/shop.php" afterPath="$PROJECT_DIR$/website/views/layouts/shop.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/views/scripts/coreshop/product/list.php" afterPath="$PROJECT_DIR$/website/views/scripts/coreshop/product/list.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/views/scripts/coreshop/search/search.php" afterPath="$PROJECT_DIR$/website/views/scripts/coreshop/search/search.php" />
     </list>
     <ignored path="CoreShop-Demo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,14 +49,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="search.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/views/scripts/coreshop/search/search.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16102394" vertical-offset="0" max-vertical-offset="1211">
-              <caret line="13" column="62" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="62" />
+            <state vertical-scroll-proportion="-15.0" vertical-offset="0" max-vertical-offset="540">
+              <caret line="24" column="100" selection-start-line="24" selection-start-column="100" selection-end-line="24" selection-end-column="100" />
               <folding>
-                <marker date="1428933089000" expanded="true" signature="761:1011" placeholder="..." />
+                <marker date="1428933289000" expanded="true" signature="761:1011" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/website/views/scripts/coreshop/product/list.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8513625" vertical-offset="634" max-vertical-offset="1845">
+              <caret line="111" column="100" selection-start-line="111" selection-start-column="100" selection-end-line="111" selection-end-column="100" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,7 +124,6 @@
         <option value="$PROJECT_DIR$/website/views/scripts/coreshop/product/helper/product-details-modal.php" />
         <option value="$PROJECT_DIR$/website/views/scripts/coreshop/user/address.php" />
         <option value="$PROJECT_DIR$/plugins/CoreShop/models/CoreShop/Category.php" />
-        <option value="$PROJECT_DIR$/website/views/scripts/coreshop/product/list.php" />
         <option value="$PROJECT_DIR$/plugins/CoreShop/controllers/CartController.php" />
         <option value="$PROJECT_DIR$/plugins/CoreShop/static/texts/en.csv" />
         <option value="$PROJECT_DIR$/plugins/CoreShop/controllers/Admin/SettingsController.php" />
@@ -133,6 +139,7 @@
         <option value="$PROJECT_DIR$/website/views/layouts/shop.php" />
         <option value="$PROJECT_DIR$/plugins/CoreShop/controllers/SearchController.php" />
         <option value="$PROJECT_DIR$/website/views/scripts/coreshop/search/search.php" />
+        <option value="$PROJECT_DIR$/website/views/scripts/coreshop/product/list.php" />
       </list>
     </option>
   </component>
@@ -926,26 +933,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/views/scripts/coreshop/product/detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-36.083332" vertical-offset="604" max-vertical-offset="1830">
-          <caret line="98" column="66" selection-start-line="98" selection-start-column="66" selection-end-line="98" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plugins/CoreShop/controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3585">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/views/scripts/coreshop/product/list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48307183" vertical-offset="0" max-vertical-offset="1860">
-          <caret line="39" column="66" selection-start-line="0" selection-start-column="0" selection-end-line="118" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1002,13 +993,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/website/views/scripts/coreshop/product/detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.702725" vertical-offset="619" max-vertical-offset="1830">
+          <caret line="98" column="66" selection-start-line="98" selection-start-column="66" selection-end-line="98" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/website/views/scripts/coreshop/search/search.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16102394" vertical-offset="0" max-vertical-offset="1211">
-          <caret line="13" column="62" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="62" />
+        <state vertical-scroll-proportion="-15.0" vertical-offset="0" max-vertical-offset="540">
+          <caret line="24" column="100" selection-start-line="24" selection-start-column="100" selection-end-line="24" selection-end-column="100" />
           <folding>
-            <marker date="1428933089000" expanded="true" signature="761:1011" placeholder="..." />
+            <marker date="1428933289000" expanded="true" signature="761:1011" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/views/scripts/coreshop/product/list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8513625" vertical-offset="634" max-vertical-offset="1845">
+          <caret line="111" column="100" selection-start-line="111" selection-start-column="100" selection-end-line="111" selection-end-column="100" />
+          <folding />
         </state>
       </provider>
     </entry>

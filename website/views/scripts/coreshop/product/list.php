@@ -110,7 +110,6 @@
             </div>
             <!-- Product List Display Ends -->
             <?= $this->paginationControl($paginator, 'Sliding', 'coreshop/helper/paging.php', array(
-                'urlprefix' => 'xy',
                 'appendQueryString' => true
             )); ?>
         </div>
