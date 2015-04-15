@@ -1,8 +1,8 @@
 <div class="container shop checkout checkout-step-4">
     
     <?=$this->partial("coreshop/helper/order-steps.php", array("step" => 4));?>
-    
-    <form action="<?=$this->url(array("action" => "delivery", "lang" => $this->language), "coreshop_checkout")?>" method="post">
+
+    <form action="<?=$this->url(array("action" => "shipping", "lang" => $this->language), "coreshop_checkout")?>" method="post">
         <div class="panel panel-smart">
             <div class="panel-heading">
                 <h3 class="panel-title"><?=$this->translate("Shipping")?></h3>
@@ -26,7 +26,7 @@
                                 <strong><?=$provider->getName()?></strong> <?=$provider->getDescription()?>
                             </td>
                             <td class="delivery-option-price">
-                                <?=\CoreShop\Tool::formatPrice($provider->getDeliveryFee($this->cart))?>
+                                <?=\CoreShop\Tool::formatPrice($provider->getShipping($this->cart))?>
                             </td>
                         </tr>
 

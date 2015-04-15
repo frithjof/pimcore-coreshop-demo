@@ -1,9 +1,9 @@
 <?php 
 
-/** Generated at 2015-03-28T14:45:25+01:00 */
+/** Generated at 2015-04-10T09:51:00+02:00 */
 
 /**
-* IP:          90.146.27.192
+* IP:          81.10.194.170
 */
 
 
@@ -163,20 +163,20 @@ public function setCity ($city) {
 
 /**
 * Get country - Land
-* @return string
+* @return \Pimcore\Model\Document\Page | \Pimcore\Model\Document\Snippet | \Pimcore\Model\Document | \Pimcore\Model\Asset | \Pimcore\Model\Object\AbstractObject
 */
 public function getCountry () {
-	$data = $this->country;
+	$data = $this->getDefinition()->getFieldDefinition("country")->preGetData($this);
 	 return $data;
 }
 
 /**
 * Get country - Land
-* @param string $country
+* @param \Pimcore\Model\Document\Page | \Pimcore\Model\Document\Snippet | \Pimcore\Model\Document | \Pimcore\Model\Asset | \Pimcore\Model\Object\AbstractObject $country
 * @return \Pimcore\Model\Object\CoreShopUserAddress
 */
 public function setCountry ($country) {
-	$this->country = $country;
+	$this->country = $this->getDefinition()->getFieldDefinition("country")->preSetData($this, $country);
 	return $this;
 }
 

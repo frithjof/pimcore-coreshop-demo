@@ -21,8 +21,8 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-6">
                         <div class="form-group">
-                            <label for="deliveryAddress"><?=$this->translate("Choose a delivery address")?>:</label>
-                            <select class="form-control" id="delivery-address" name="delivery-address">
+                            <label for="shippingAddress"><?=$this->translate("Choose a shipping address")?>:</label>
+                            <select class="form-control" id="shipping-address" name="shipping-address">
                                 <?php foreach ($addresses as $address) { ?>
                                     <option data-value="<?=preg_replace('/[^a-zA-Z0-9]/', '', $address->getName())?>" value="<?=$address->getName()?>"><?=$address->getName()?></option>
                                 <?php } ?>
@@ -31,7 +31,7 @@
                     </div>
 
                     <div class="col-xs-6 billing-address-selector" style="display:none">
-                        <label for="deliveryAddress"><?=$this->translate("Choose a billing address")?>:</label>
+                        <label for="billingAddress"><?=$this->translate("Choose a billing address")?>:</label>
                         <div class="form-group">
                             <select class="form-control" id="billing-address" name="billing-address">
                                 <?php foreach ($addresses as $address) { ?>
@@ -46,9 +46,9 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="form-group form-group-no-border">
-                            <label for="useDeliveryAsBilling">
-                                <input type="checkbox" name="useDeliveryAsBilling" checked="checked" />
-                                <?=$this->translate("Use the delivery address as the billing address.")?></label>
+                            <label for="useShippingAsBilling">
+                                <input type="checkbox" name="useShippingAsBilling" checked="checked" />
+                                <?=$this->translate("Use the shipping address as the billing address.")?></label>
                         </div>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                         <div class="panel panel-smart">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <?=$this->translate("Delivery Address")?>
+                                    <?=$this->translate("Shipping Address")?>
                                 </h4>
                             </div>
                             <div class="panel-body panel-delivery-address">

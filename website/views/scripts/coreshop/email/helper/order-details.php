@@ -47,21 +47,21 @@
         <td class="text-right"><h5><strong class="cart-sub-total"><?=\CoreShop\Tool::formatPrice($this->order->getSubtotal())?></strong></h5></td>
     </tr>*/?>
     <?php
-    $deliveryFee = $this->order->getDeliveryFee();
+    $shipping = $this->order->getShipping();
     ?>
-    <?php if($deliveryFee > 0) { ?>
+    <?php if($shipping > 0) { ?>
         <tr>
             <td>   </td>
             <td>   </td>
             <td><?=$this->translate("Versandkosten") ?></td>
-            <td class="text-right"><strong><?=\CoreShop\Tool::formatPrice($deliveryFee)?></strong></td>
+            <td class="text-right"><strong><?=\CoreShop\Tool::formatPrice($shipping)?></strong></td>
         </tr>
     <?php } ?>
     <tr>
         <td>   </td>
         <td>   </td>
         <td><?=$this->translate("Gesamt")?></td>
-        <td class="text-right"><strong class="cart-total-price"><?=\CoreShop\Tool::formatPrice($this->order->getTotal() + $deliveryFee)?></strong></td>
+        <td class="text-right"><strong class="cart-total-price"><?=\CoreShop\Tool::formatPrice($this->order->getTotal())?></strong></td>
     </tr>
     </tbody>
 </table>

@@ -1,12 +1,12 @@
 <?php 
 
-/** Generated at 2015-03-28T14:45:25+01:00 */
+/** Generated at 2015-04-15T15:22:13+02:00 */
 
 /**
 * Inheritance: no
 * Variants   : no
 * Changed by : admin (2)
-* IP:          90.146.27.192
+* IP:          91.141.2.36
 */
 
 
@@ -18,6 +18,7 @@ class CoreShopOrder extends \CoreShop\Order {
 
 public $o_classId = 32;
 public $o_className = "CoreShopOrder";
+public $orderDate;
 public $lang;
 public $items;
 public $customer;
@@ -25,9 +26,11 @@ public $deliveryAddress;
 public $billingAddress;
 public $paymentProvider;
 public $deliveryProvider;
-public $deliveryFee;
+public $discount;
+public $shipping;
 public $payments;
 public $extraInformation;
+public $cartRule;
 
 
 /**
@@ -38,6 +41,29 @@ public static function create($values = array()) {
 	$object = new static();
 	$object->setValues($values);
 	return $object;
+}
+
+/**
+* Get orderDate - Order Date
+* @return \Pimcore\Date
+*/
+public function getOrderDate () {
+	$preValue = $this->preGetValue("orderDate"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
+		return $preValue;
+	}
+	$data = $this->orderDate;
+	return $data;
+}
+
+/**
+* Set orderDate - Order Date
+* @param \Pimcore\Date $orderDate
+* @return \Pimcore\Model\Object\CoreShopOrder
+*/
+public function setOrderDate ($orderDate) {
+	$this->orderDate = $orderDate;
+	return $this;
 }
 
 /**
@@ -202,25 +228,48 @@ public function setDeliveryProvider ($deliveryProvider) {
 }
 
 /**
-* Get deliveryFee - deliveryFee
+* Get discount - Discount
 * @return float
 */
-public function getDeliveryFee () {
-	$preValue = $this->preGetValue("deliveryFee"); 
+public function getDiscount () {
+	$preValue = $this->preGetValue("discount"); 
 	if($preValue !== null && !\Pimcore::inAdmin()) { 
 		return $preValue;
 	}
-	$data = $this->deliveryFee;
+	$data = $this->discount;
 	return $data;
 }
 
 /**
-* Set deliveryFee - deliveryFee
-* @param float $deliveryFee
+* Set discount - Discount
+* @param float $discount
 * @return \Pimcore\Model\Object\CoreShopOrder
 */
-public function setDeliveryFee ($deliveryFee) {
-	$this->deliveryFee = $deliveryFee;
+public function setDiscount ($discount) {
+	$this->discount = $discount;
+	return $this;
+}
+
+/**
+* Get shipping - Shipping
+* @return float
+*/
+public function getShipping () {
+	$preValue = $this->preGetValue("shipping"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
+		return $preValue;
+	}
+	$data = $this->shipping;
+	return $data;
+}
+
+/**
+* Set shipping - Shipping
+* @param float $shipping
+* @return \Pimcore\Model\Object\CoreShopOrder
+*/
+public function setShipping ($shipping) {
+	$this->shipping = $shipping;
 	return $this;
 }
 
@@ -275,6 +324,29 @@ public function setExtraInformation ($extraInformation) {
 	return $this;
 }
 
+/**
+* Get cartRule - Cart Rule
+* @return \Pimcore\Model\Document\Page | \Pimcore\Model\Document\Snippet | \Pimcore\Model\Document | \Pimcore\Model\Asset | \Pimcore\Model\Object\AbstractObject
+*/
+public function getCartRule () {
+	$preValue = $this->preGetValue("cartRule"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
+		return $preValue;
+	}
+	$data = $this->getClass()->getFieldDefinition("cartRule")->preGetData($this);
+	return $data;
+}
+
+/**
+* Set cartRule - Cart Rule
+* @param \Pimcore\Model\Document\Page | \Pimcore\Model\Document\Snippet | \Pimcore\Model\Document | \Pimcore\Model\Asset | \Pimcore\Model\Object\AbstractObject $cartRule
+* @return \Pimcore\Model\Object\CoreShopOrder
+*/
+public function setCartRule ($cartRule) {
+	$this->cartRule = $this->getClass()->getFieldDefinition("cartRule")->preSetData($this, $cartRule);
+	return $this;
+}
+
 protected static $_relationFields = array (
   'items' => 
   array (
@@ -287,6 +359,10 @@ protected static $_relationFields = array (
   'payments' => 
   array (
     'type' => 'objects',
+  ),
+  'cartRule' => 
+  array (
+    'type' => 'href',
   ),
 );
 

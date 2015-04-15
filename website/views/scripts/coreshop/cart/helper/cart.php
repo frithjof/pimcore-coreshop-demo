@@ -72,19 +72,28 @@
                 </td>
             </tr>
             <?php
-            $deliveryFee = 0;
-
-            if(array_key_exists("deliveryProvider", $this->session->order) && $this->session->order['deliveryProvider'] instanceof \CoreShop\Plugin\Delivery) {
-                $deliveryFee = $this->session->order['deliveryProvider']->getDeliveryFee($this->cart);
-            }
+            $shipping = $this->cart->getShipping();
             ?>
-            <?php if($deliveryFee > 0) { ?>
+            <?php if($shipping > 0) { ?>
                 <tr>
                     <td colspan="4" class="text-right">
                         <strong><?=$this->translate("Shipping")?>:</strong>
                     </td>
                     <td colspan="<?=$this->edit ? "2" : "1" ?>" class="text-left cart-sub-total">
-                        <?=\CoreShop\Tool::formatPrice($deliveryFee)?>
+                        <?=\CoreShop\Tool::formatPrice($shipping)?>
+                    </td>
+                </tr>
+            <?php } ?>
+            <?php
+            $discount = $this->cart->getDiscount();
+            ?>
+            <?php if($discount > 0) { ?>
+                <tr>
+                    <td colspan="4" class="text-right">
+                        <strong><?=$this->translate("Discount")?>:</strong>
+                    </td>
+                    <td colspan="<?=$this->edit ? "2" : "1" ?>" class="text-left cart-sub-total">
+                        -<?=\CoreShop\Tool::formatPrice($discount)?>
                     </td>
                 </tr>
             <?php } ?>
@@ -93,7 +102,7 @@
                     <strong><?=$this->translate("Total ")?>:</strong>
                 </td>
                 <td colspan="<?=$this->edit ? "2" : "1" ?>" class="text-left cart-total-price">
-                    <?=\CoreShop\Tool::formatPrice($this->cart->getTotal() + $deliveryFee)?>
+                    <?=\CoreShop\Tool::formatPrice($this->cart->getTotal())?>
                 </td>
             </tr>
         </tfoot>

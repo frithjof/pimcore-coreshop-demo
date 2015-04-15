@@ -1,12 +1,12 @@
 <?php 
 
-/** Generated at 2015-03-28T14:44:59+01:00 */
+/** Generated at 2015-04-15T14:08:40+02:00 */
 
 /**
 * Inheritance: no
 * Variants   : no
 * Changed by : admin (2)
-* IP:          90.146.27.192
+* IP:          91.141.2.36
 */
 
 
@@ -19,6 +19,7 @@ class CoreShopCart extends \CoreShop\Cart {
 public $o_classId = 27;
 public $o_className = "CoreShopCart";
 public $user;
+public $cartRule;
 public $items;
 
 
@@ -56,6 +57,29 @@ public function setUser ($user) {
 }
 
 /**
+* Get cartRule - Cart Rule
+* @return \Pimcore\Model\Document\Page | \Pimcore\Model\Document\Snippet | \Pimcore\Model\Document | \Pimcore\Model\Asset | \Pimcore\Model\Object\AbstractObject
+*/
+public function getCartRule () {
+	$preValue = $this->preGetValue("cartRule"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
+		return $preValue;
+	}
+	$data = $this->getClass()->getFieldDefinition("cartRule")->preGetData($this);
+	return $data;
+}
+
+/**
+* Set cartRule - Cart Rule
+* @param \Pimcore\Model\Document\Page | \Pimcore\Model\Document\Snippet | \Pimcore\Model\Document | \Pimcore\Model\Asset | \Pimcore\Model\Object\AbstractObject $cartRule
+* @return \Pimcore\Model\Object\CoreShopCart
+*/
+public function setCartRule ($cartRule) {
+	$this->cartRule = $this->getClass()->getFieldDefinition("cartRule")->preSetData($this, $cartRule);
+	return $this;
+}
+
+/**
 * Get items - Items
 * @return array
 */
@@ -80,6 +104,10 @@ public function setItems ($items) {
 
 protected static $_relationFields = array (
   'user' => 
+  array (
+    'type' => 'href',
+  ),
+  'cartRule' => 
   array (
     'type' => 'href',
   ),

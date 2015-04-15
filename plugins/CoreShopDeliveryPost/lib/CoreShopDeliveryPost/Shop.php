@@ -2,13 +2,13 @@
 
 namespace CoreShopDeliveryPost;
 
-use CoreShop\Plugin\Delivery;
+use CoreShop\Plugin\Shipping;
 
-class Shop implements Delivery
+class Shop implements Shipping
 {
     public function attachEvents()
     {
-        \CoreShop\Plugin::getEventManager()->attach("delivery.getProvider", function($e) {
+        \CoreShop\Plugin::getEventManager()->attach("shipping.getProvider", function($e) {
             return $this;
         });
     }
@@ -33,13 +33,13 @@ class Shop implements Delivery
         return "delivery_post";
     }
     
-    public function getDeliveryFee(\Pimcore\Model\Object\CoreShopCart $cart)
+    public function getShipping(\Pimcore\Model\Object\CoreShopCart $cart)
     {
         $maxDelivery = 0;
         
         foreach($cart->getItems() as $item)
         {
-            $deliveryForItem = $this->getDeliveryFeeForItem($item);
+            $deliveryForItem = $this->getShippingForItem($item);
             
             if($deliveryForItem > $maxDelivery)
                 $maxDelivery = $deliveryForItem;
@@ -48,7 +48,7 @@ class Shop implements Delivery
         return $maxDelivery;
     }
     
-    protected function getDeliveryFeeForItem(\Pimcore\Model\Object\CoreShopCartItem $item)
+    protected function getShippingForItem(\Pimcore\Model\Object\CoreShopCartItem $item)
     {
         $product = $item->getProduct();
 
