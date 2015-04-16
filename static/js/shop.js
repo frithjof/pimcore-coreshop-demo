@@ -35,6 +35,10 @@ $(document).ready(function(){
         {
             shop.initRegisterForm();
         }
+
+        $('.cart-rule').click(function() {
+            $('#cartRule').val($(this).find(".cart-rule-code").html())
+        })
         
         shop.initChangeAddress();
         shop.addCartEventListeners();

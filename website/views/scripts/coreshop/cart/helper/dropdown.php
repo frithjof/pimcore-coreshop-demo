@@ -28,9 +28,11 @@
                         <td class="text-right">x <?=$item->getAmount()?></td>
                         <td class="text-right"><?=\CoreShop\Tool::formatPrice($item->getTotal())?></td>
                         <td class="text-center">
+                            <?php if(!$item->getIsGiftItem()) { ?>
                             <a href="#" class="removeFromCart" data-id="<?=$item->getId()?>" data-refresh="true">
                                 <i class="fa fa-times"></i>
                             </a>
+                            <?php } ?>
                         </td>
                     </tr>
                 <?php } ?>
