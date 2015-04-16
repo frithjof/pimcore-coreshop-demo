@@ -125,10 +125,12 @@
                         $highlightCartRules = \Pimcore\Model\Object\CoreShopCartRule::getHighlightItems();
 
                         if(count($highlightCartRules) > 0)
+                        {
                         ?>
-                            <h4><?=$this->translate("Take advantage of our exclusive offers:")?></h4>
-                            <ul class="list">
+                        <h4><?= $this->translate("Take advantage of our exclusive offers:") ?></h4>
+                        <ul class="list">
                         <?php
+                        }
 
                         foreach($highlightCartRules as $cartRule) {
                             echo '<li class="cart-rule"><strong class="cart-rule-code">'.$cartRule->getCode().'</strong> ' . $cartRule->getName() . '</li>';
