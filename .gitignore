@@ -4,8 +4,8 @@ website/var/tmp
 website/var/recyclebin
 website/var/versions
 db-change-*.sql
-vendor
 composer.lock
+/vendor/*
 php.log
 static/scss/.sass-cache
 website/var/log
