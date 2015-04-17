@@ -4,13 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/website/views/scripts/coreshop/user/helper/address.php" line="6" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2ab43a8-7b0e-40d3-81e6-74e26d92fb22" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/CoreShop" afterPath="$PROJECT_DIR$/plugins/CoreShop" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/~db/coreshop_pimcore.sql.gz" afterPath="$PROJECT_DIR$/~db/coreshop_pimcore.sql.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/var/config/extensions.xml" afterPath="$PROJECT_DIR$/website/var/config/extensions.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/var/config/system.xml" afterPath="$PROJECT_DIR$/website/var/config/system.xml" />
-    </list>
+    <list default="true" id="f2ab43a8-7b0e-40d3-81e6-74e26d92fb22" name="Default" comment="" />
     <ignored path="CoreShop-Demo.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -43,8 +37,8 @@
       <file leaf-file-name="Tool.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/plugins/CoreShop/lib/CoreShop/Tool.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.96378505" vertical-offset="840" max-vertical-offset="4890">
-              <caret line="116" column="53" selection-start-line="116" selection-start-column="53" selection-end-line="116" selection-end-column="53" />
+            <state vertical-scroll-proportion="0.28037384" vertical-offset="840" max-vertical-offset="4890">
+              <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -842,8 +836,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/plugins/CoreShop/lib/CoreShop/Tool.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.96378505" vertical-offset="840" max-vertical-offset="4890">
-          <caret line="116" column="53" selection-start-line="116" selection-start-column="53" selection-end-line="116" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.28037384" vertical-offset="840" max-vertical-offset="4890">
+          <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
           <folding />
         </state>
       </provider>
