@@ -33,8 +33,8 @@
     <adapter>Mysqli</adapter>
     <params>
       <host>localhost</host>
-      <username>coreshopdemo_user</username>
-      <password>coreshopdemo_pimcore</password>
+      <username>coreshop_demo</username>
+      <password>coreshop_demo</password>
       <dbname>coreshopdemo_pimcore</dbname>
       <port>3306</port>
     </params>

@@ -8,3 +8,4 @@ vendor
 composer.lock
 php.log
 static/scss/.sass-cache
+website/var/log
