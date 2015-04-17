@@ -1,4 +1,3 @@
-
 # mime types
 AddType video/mp4 .mp4
 AddType video/webm .webm
@@ -81,22 +80,23 @@ RewriteRule ^.*$ index.php [NC,L]
 </IfModule>
 
 <IfModule pagespeed_module>
-    # pimcore mod_pagespeed integration
-    # pimcore automatically disables mod_pagespeed in the following situations: debug-mode on, /admin, preview, editmode, ...
-    # if you want to disable pagespeed for specific actions in pimcore you can use $this->disableBrowserCache() in your action
-    RewriteCond %{REQUEST_URI} ^/(mod_)?pagespeed_(statistics|message|console|beacon|admin|global_admin)
-    RewriteRule . - [L]
+  ModPagespeed on
 
-    #ModPagespeed On
-    AddOutputFilterByType MOD_PAGESPEED_OUTPUT_FILTER text/html
-    ModPagespeedModifyCachingHeaders off
-    ModPagespeedRewriteLevel PassThrough
-    # low risk filters
-    ModPagespeedEnableFilters remove_comments,recompress_images
-    # low and moderate filters, recommended filters, but can cause problems
-    ModPagespeedEnableFilters lazyload_images,extend_cache_images,inline_preview_images,sprite_images
-    ModPagespeedEnableFilters combine_css,rewrite_css,move_css_to_head,flatten_css_imports,extend_cache_css,prioritize_critical_css
-    ModPagespeedEnableFilters extend_cache_scripts,combine_javascript,canonicalize_javascript_libraries,rewrite_javascript
-    # high risk
-    #ModPagespeedEnableFilters defer_javascript,local_storage_cache
+  #RewriteCond %{REQUEST_URI} ^/(mod_)?pagespeed_(statistics|message|console|beacon|admin|global_admin)
+  #RewriteRule . - [L]
+
+  #Minify HTML
+  ModPagespeedEnableFilters collapse_whitespace,elide_attributes,remove_comments,remove_quotes
+
+  #Local Cache
+  ModPagespeedEnableFilters local_storage_cache,insert_dns_prefetch
+
+  #Minify CSS
+  ModPagespeedEnableFilters rewrite_css,combine_css,combine_heads,inline_google_font_css,rewrite_style_attributes_with_url
+
+  #Minify JS
+  ModPagespeedEnableFilters combine_javascript,rewrite_javascript,combine_heads
+
+  #Optimize Images
+  ModPagespeedEnableFilters sprite_images,dedup_inlined_images,inline_preview_images,rewrite_images,extend_cache
 </IfModule>

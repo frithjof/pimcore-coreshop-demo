@@ -1,6 +1,6 @@
 <?php 
 
-/** Generated at 2015-04-15T15:22:13+02:00 */
+/** Generated at 2015-04-15T15:35:09+02:00 */
 
 /**
 * Inheritance: no
@@ -22,10 +22,10 @@ public $orderDate;
 public $lang;
 public $items;
 public $customer;
-public $deliveryAddress;
+public $shippingAddress;
 public $billingAddress;
 public $paymentProvider;
-public $deliveryProvider;
+public $shippingProvider;
 public $discount;
 public $shipping;
 public $payments;
@@ -136,30 +136,30 @@ public function setCustomer ($customer) {
 }
 
 /**
-* Get deliveryAddress - deliveryAddress
+* Get shippingAddress - Shipping Address
 * @return string
 */
-public function getDeliveryAddress () {
-	$preValue = $this->preGetValue("deliveryAddress"); 
+public function getShippingAddress () {
+	$preValue = $this->preGetValue("shippingAddress"); 
 	if($preValue !== null && !\Pimcore::inAdmin()) { 
 		return $preValue;
 	}
-	$data = $this->deliveryAddress;
+	$data = $this->shippingAddress;
 	return $data;
 }
 
 /**
-* Set deliveryAddress - deliveryAddress
-* @param string $deliveryAddress
+* Set shippingAddress - Shipping Address
+* @param string $shippingAddress
 * @return \Pimcore\Model\Object\CoreShopOrder
 */
-public function setDeliveryAddress ($deliveryAddress) {
-	$this->deliveryAddress = $deliveryAddress;
+public function setShippingAddress ($shippingAddress) {
+	$this->shippingAddress = $shippingAddress;
 	return $this;
 }
 
 /**
-* Get billingAddress - billingAddress
+* Get billingAddress - Billing Address
 * @return string
 */
 public function getBillingAddress () {
@@ -172,7 +172,7 @@ public function getBillingAddress () {
 }
 
 /**
-* Set billingAddress - billingAddress
+* Set billingAddress - Billing Address
 * @param string $billingAddress
 * @return \Pimcore\Model\Object\CoreShopOrder
 */
@@ -182,7 +182,7 @@ public function setBillingAddress ($billingAddress) {
 }
 
 /**
-* Get paymentProvider - paymentProvider
+* Get paymentProvider - Payment Provider
 * @return string
 */
 public function getPaymentProvider () {
@@ -195,7 +195,7 @@ public function getPaymentProvider () {
 }
 
 /**
-* Set paymentProvider - paymentProvider
+* Set paymentProvider - Payment Provider
 * @param string $paymentProvider
 * @return \Pimcore\Model\Object\CoreShopOrder
 */
@@ -205,25 +205,25 @@ public function setPaymentProvider ($paymentProvider) {
 }
 
 /**
-* Get deliveryProvider - deliveryProvider
+* Get shippingProvider - Shipping Provider
 * @return string
 */
-public function getDeliveryProvider () {
-	$preValue = $this->preGetValue("deliveryProvider"); 
+public function getShippingProvider () {
+	$preValue = $this->preGetValue("shippingProvider"); 
 	if($preValue !== null && !\Pimcore::inAdmin()) { 
 		return $preValue;
 	}
-	$data = $this->deliveryProvider;
+	$data = $this->shippingProvider;
 	return $data;
 }
 
 /**
-* Set deliveryProvider - deliveryProvider
-* @param string $deliveryProvider
+* Set shippingProvider - Shipping Provider
+* @param string $shippingProvider
 * @return \Pimcore\Model\Object\CoreShopOrder
 */
-public function setDeliveryProvider ($deliveryProvider) {
-	$this->deliveryProvider = $deliveryProvider;
+public function setShippingProvider ($shippingProvider) {
+	$this->shippingProvider = $shippingProvider;
 	return $this;
 }
 

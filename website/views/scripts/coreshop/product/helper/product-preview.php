@@ -1,5 +1,6 @@
 <?php
     $href = $this->url(array("name" => $this->product->getName(), "product" => $this->product->getId(), "lang" => $this->language), "coreshop_detail");
+    $uniqid = uniqid() . "-product-image-" . $this->product->getId();
 ?>
 <div class="product-col">
     <div class="image">
@@ -8,7 +9,7 @@
                 <div class="image-new-badge"></div>
             <?php } ?>
 
-            <a href="<?=$href?>"><img id="product-image-<?=$this->product->getId()?>" src="<?=$this->product->getImage()->getThumbnail("coreshop_productList")?>" class="img-responsive" /></a>
+            <a href="<?=$href?>"><img id="<?=$uniqid ?>" src="<?=$this->product->getImage()->getThumbnail("coreshop_productList")?>" class="img-responsive" /></a>
             <hr/>
         <?php } ?>
     </div>
@@ -22,7 +23,7 @@
             <span class="price-new"><?=\CoreShop\Tool::formatPrice($this->product->getProductPrice())?></span>
         </div>
         <div class="cart-button">
-            <button type="button" class="btn btn-cart" data-id="<?=$this->product->getId()?>" data-img="#product-image-<?=$this->product->getId()?>">
+            <button type="button" class="btn btn-cart" data-id="<?=$this->product->getId()?>" data-img="<?=$uniqid ?>">
                 <?=$this->translate("Add to cart")?>
                 <i class="fa fa-shopping-cart"></i>
             </button>

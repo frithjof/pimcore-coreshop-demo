@@ -1,3 +1,6 @@
+<?php
+    $uniqid = uniqid() . "-product-image-" . $this->product->getId();
+?>
 <div class="col-xs-12">
     <div class="product-col list clearfix">
         <div class="image">
@@ -6,7 +9,7 @@
                     <div class="image-new-badge"></div>
                 <?php } ?>
 
-                <img src="<?=$this->product->getImage()->getThumbnail("coreshop_productList")?>" alt="<?=$this->product->getName()?>" id="product-image-<?=$this->product->getId()?>" class="img-responsive" />
+                <img src="<?=$this->product->getImage()->getThumbnail("coreshop_productList")?>" alt="<?=$this->product->getName()?>" id="<?=$uniqid?>" class="img-responsive" />
             <?php } ?>
         </div>
         <div class="caption">
@@ -25,7 +28,7 @@
                     <button type="button" title="" class="btn btn-compare" data-original-title="Compare">
                         <i class="fa fa-bar-chart-o"></i>
                     </button>
-                    <button type="button" class="btn btn-cart" data-id="<?=$this->product->getId()?>" data-img="#product-image-<?=$this->product->getId()?>">
+                    <button type="button" class="btn btn-cart" data-id="<?=$this->product->getId()?>" data-img="#<?=$uniqid?>">
                         Add to cart
                         <i class="fa fa-shopping-cart"></i>
                     </button>

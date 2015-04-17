@@ -1,12 +1,12 @@
 <?php 
 
-/** Generated at 2015-03-31T14:38:26+02:00 */
+/** Generated at 2015-04-16T16:38:02+02:00 */
 
 /**
 * Inheritance: no
 * Variants   : no
 * Changed by : admin (2)
-* IP:          178.189.232.59
+* IP:          81.10.194.170
 */
 
 
@@ -21,6 +21,7 @@ public $o_className = "CoreShopCartItem";
 public $amount;
 public $product;
 public $extraInformation;
+public $isGiftItem;
 
 
 /**
@@ -104,6 +105,29 @@ public function getExtraInformation () {
 */
 public function setExtraInformation ($extraInformation) {
 	$this->extraInformation = $this->getClass()->getFieldDefinition("extraInformation")->preSetData($this, $extraInformation);
+	return $this;
+}
+
+/**
+* Get isGiftItem - Gift Item
+* @return boolean
+*/
+public function getIsGiftItem () {
+	$preValue = $this->preGetValue("isGiftItem"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
+		return $preValue;
+	}
+	$data = $this->isGiftItem;
+	return $data;
+}
+
+/**
+* Set isGiftItem - Gift Item
+* @param boolean $isGiftItem
+* @return \Pimcore\Model\Object\CoreShopCartItem
+*/
+public function setIsGiftItem ($isGiftItem) {
+	$this->isGiftItem = $isGiftItem;
 	return $this;
 }
 
