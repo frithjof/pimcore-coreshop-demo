@@ -1,6 +1,6 @@
 <?php
 
-    $categories = \CoreShop\Category::getFirstLevel();
+    $categories = \CoreShop\Model\Category::getFirstLevel();
 ?>
 
 <h3 class="side-heading"><?=$this->translate("Categories")?></h3>

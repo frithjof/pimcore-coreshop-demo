@@ -2,7 +2,7 @@
 
 namespace CoreShopDeliveryPost;
 
-use CoreShop\Plugin\Shipping;
+use CoreShop\Model\Plugin\Shipping;
 
 class Shop implements Shipping
 {

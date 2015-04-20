@@ -14,7 +14,7 @@ namespace Pimcore\Model\Object;
 
 
 
-class CoreShopCategory extends \CoreShop\Category {
+class CoreShopCategory extends \CoreShop\Model\Category {
 
 public $o_classId = 25;
 public $o_className = "CoreShopCategory";

@@ -2,7 +2,7 @@
 
 namespace CoreShopCrossSelling;
 
-use CoreShop\Plugin\Hook;
+use CoreShop\Model\Plugin\Hook;
 
 use Pimcore\Model\Object;
 use Pimcore\Model\Object\CoreShopProduct;

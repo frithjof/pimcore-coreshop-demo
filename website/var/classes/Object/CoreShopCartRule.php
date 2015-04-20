@@ -14,7 +14,7 @@ namespace Pimcore\Model\Object;
 
 
 
-class CoreShopCartRule extends \CoreShop\CartRule {
+class CoreShopCartRule extends \CoreShop\Model\CartRule {
 
 public $o_classId = 36;
 public $o_className = "CoreShopCartRule";

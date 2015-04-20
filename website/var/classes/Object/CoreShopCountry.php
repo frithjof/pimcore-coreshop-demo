@@ -14,7 +14,7 @@ namespace Pimcore\Model\Object;
 
 
 
-class CoreShopCountry extends \CoreShop\Country {
+class CoreShopCountry extends \CoreShop\Model\Country {
 
 public $o_classId = 34;
 public $o_className = "CoreShopCountry";

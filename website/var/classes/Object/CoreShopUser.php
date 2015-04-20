@@ -14,7 +14,7 @@ namespace Pimcore\Model\Object;
 
 
 
-class CoreShopUser extends \CoreShop\User\UserAbstract {
+class CoreShopUser extends \CoreShop\Model\User\UserAbstract {
 
 public $o_classId = 29;
 public $o_className = "CoreShopUser";

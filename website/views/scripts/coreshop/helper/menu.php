@@ -13,7 +13,7 @@
         <div class="collapse navbar-collapse navbar-cat-collapse">
             <ul class="nav navbar-nav">
                 <?php
-                    $categories = \CoreShop\Category::getFirstLevel();
+                    $categories = \CoreShop\Model\Category::getFirstLevel();
 
                     foreach($categories as $cat) {
                         $dropdown = count($cat->getChildCategories()) > 0;

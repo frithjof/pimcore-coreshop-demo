@@ -5,7 +5,7 @@
 <!-- Heading Ends -->
 <!-- Products Row Starts -->
     <?php
-        $products = CoreShop\Product::getLatest();
+        $products = CoreShop\Model\Product::getLatest();
     ?>
     <div class="row">
         <div class="col-xs-12">

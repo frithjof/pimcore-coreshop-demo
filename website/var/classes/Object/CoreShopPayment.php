@@ -14,7 +14,7 @@ namespace Pimcore\Model\Object;
 
 
 
-class CoreShopPayment extends \CoreShop\Payment {
+class CoreShopPayment extends \CoreShop\Model\Payment {
 
 public $o_classId = 31;
 public $o_className = "CoreShopPayment";

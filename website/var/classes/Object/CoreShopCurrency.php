@@ -14,7 +14,7 @@ namespace Pimcore\Model\Object;
 
 
 
-class CoreShopCurrency extends \CoreShop\Currency {
+class CoreShopCurrency extends \CoreShop\Model\Currency {
 
 public $o_classId = 35;
 public $o_className = "CoreShopCurrency";

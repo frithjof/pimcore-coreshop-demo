@@ -14,7 +14,7 @@ namespace Pimcore\Model\Object;
 
 
 
-class CoreShopOrder extends \CoreShop\Order {
+class CoreShopOrder extends \CoreShop\Model\Order {
 
 public $o_classId = 32;
 public $o_className = "CoreShopOrder";
