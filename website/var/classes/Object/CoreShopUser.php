@@ -1,12 +1,12 @@
 <?php 
 
-/** Generated at 2015-03-31T21:35:40+02:00 */
+/** Generated at 2015-05-01T13:24:07+02:00 */
 
 /**
 * Inheritance: no
 * Variants   : no
 * Changed by : admin (2)
-* IP:          90.146.27.192
+* IP:          90.146.54.62
 */
 
 
@@ -14,7 +14,7 @@ namespace Pimcore\Model\Object;
 
 
 
-class CoreShopUser extends \CoreShop\Model\User\UserAbstract {
+class CoreShopUser extends \CoreShop\Model\User {
 
 public $o_classId = 29;
 public $o_className = "CoreShopUser";

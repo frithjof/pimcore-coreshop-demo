@@ -1,9 +1,9 @@
 <?php 
 
-/** Generated at 2015-04-10T10:44:45+02:00 */
+/** Generated at 2015-05-01T14:40:52+02:00 */
 
 /**
-* IP:          81.10.194.170
+* IP:          90.146.54.62
 */
 
 
@@ -15,7 +15,7 @@ class CoreShopProductSpecificPrice extends Object\Fieldcollection\Data\AbstractD
 
 public $type = "CoreShopProductSpecificPrice";
 public $customers;
-public $currency;
+public $currencies;
 public $countries;
 public $from;
 public $to;
@@ -45,21 +45,21 @@ public function setCustomers ($customers) {
 }
 
 /**
-* Get currency - Currency
+* Get currencies - Currency
 * @return array
 */
-public function getCurrency () {
-	$data = $this->getDefinition()->getFieldDefinition("currency")->preGetData($this);
+public function getCurrencies () {
+	$data = $this->currencies;
 	 return $data;
 }
 
 /**
-* Get currency - Currency
-* @param array $currency
+* Get currencies - Currency
+* @param array $currencies
 * @return \Pimcore\Model\Object\CoreShopProductSpecificPrice
 */
-public function setCurrency ($currency) {
-	$this->currency = $this->getDefinition()->getFieldDefinition("currency")->preSetData($this, $currency);
+public function setCurrencies ($currencies) {
+	$this->currencies = $currencies;
 	return $this;
 }
 
@@ -68,7 +68,7 @@ public function setCurrency ($currency) {
 * @return array
 */
 public function getCountries () {
-	$data = $this->getDefinition()->getFieldDefinition("countries")->preGetData($this);
+	$data = $this->countries;
 	 return $data;
 }
 
@@ -78,7 +78,7 @@ public function getCountries () {
 * @return \Pimcore\Model\Object\CoreShopProductSpecificPrice
 */
 public function setCountries ($countries) {
-	$this->countries = $this->getDefinition()->getFieldDefinition("countries")->preSetData($this, $countries);
+	$this->countries = $countries;
 	return $this;
 }
 

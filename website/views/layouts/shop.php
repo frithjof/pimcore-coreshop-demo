@@ -59,7 +59,7 @@
                                         </span>
                                     </a>
                                 </li>
-                                <?php if($this->session->user instanceof \CoreShop\Model\Plugin\User) { ?>
+                                <?php if($this->session->user instanceof \Pimcore\Model\Object\CoreShopUser) { ?>
                                     <li>
                                         <a href="<?=$this->url(array("lang" => $this->language, "action" => "profile"), "coreshop_user")?>">
                                             <i class="fa fa-user hidden-lg hidden-md" title="<?=$this->translate("My Account")?>"></i>
@@ -126,7 +126,7 @@
                                     <i class="fa fa-caret-down"></i>
                                 </button>
                                 <ul class="pull-right dropdown-menu">
-                                    <?php foreach(\Pimcore\Model\Object\CoreShopCurrency::getAvailable() as $currency) { ?>
+                                    <?php foreach(\CoreShop\Model\Currency::getAvailable() as $currency) { ?>
                                     <li><a tabindex="-1" href="<?=$this->url(array("currency" => $currency->getId()))?>"><?=$currency->getName()?> </a></li>
                                     <?php } ?>
                                 </ul>

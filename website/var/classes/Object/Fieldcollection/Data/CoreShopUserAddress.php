@@ -1,9 +1,9 @@
 <?php 
 
-/** Generated at 2015-04-10T09:51:00+02:00 */
+/** Generated at 2015-05-01T15:08:25+02:00 */
 
 /**
-* IP:          81.10.194.170
+* IP:          90.146.54.62
 */
 
 
@@ -21,11 +21,12 @@ public $street;
 public $nr;
 public $zip;
 public $city;
-public $country;
 public $extra;
 public $phone;
 public $phone_mobile;
 public $name;
+public $image;
+public $country;
 
 
 /**
@@ -162,25 +163,6 @@ public function setCity ($city) {
 }
 
 /**
-* Get country - Land
-* @return \Pimcore\Model\Document\Page | \Pimcore\Model\Document\Snippet | \Pimcore\Model\Document | \Pimcore\Model\Asset | \Pimcore\Model\Object\AbstractObject
-*/
-public function getCountry () {
-	$data = $this->getDefinition()->getFieldDefinition("country")->preGetData($this);
-	 return $data;
-}
-
-/**
-* Get country - Land
-* @param \Pimcore\Model\Document\Page | \Pimcore\Model\Document\Snippet | \Pimcore\Model\Document | \Pimcore\Model\Asset | \Pimcore\Model\Object\AbstractObject $country
-* @return \Pimcore\Model\Object\CoreShopUserAddress
-*/
-public function setCountry ($country) {
-	$this->country = $this->getDefinition()->getFieldDefinition("country")->preSetData($this, $country);
-	return $this;
-}
-
-/**
 * Get extra - Weitere Informationen
 * @return string
 */
@@ -253,6 +235,44 @@ public function getName () {
 */
 public function setName ($name) {
 	$this->name = $name;
+	return $this;
+}
+
+/**
+* Get image - image
+* @return \Pimcore\Model\Asset\Image
+*/
+public function getImage () {
+	$data = $this->image;
+	 return $data;
+}
+
+/**
+* Get image - image
+* @param \Pimcore\Model\Asset\Image $image
+* @return \Pimcore\Model\Object\CoreShopUserAddress
+*/
+public function setImage ($image) {
+	$this->image = $image;
+	return $this;
+}
+
+/**
+* Get country - Country
+* @return string
+*/
+public function getCountry () {
+	$data = $this->country;
+	 return $data;
+}
+
+/**
+* Get country - Country
+* @param string $country
+* @return \Pimcore\Model\Object\CoreShopUserAddress
+*/
+public function setCountry ($country) {
+	$this->country = $country;
 	return $this;
 }
 

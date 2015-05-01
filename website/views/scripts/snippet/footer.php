@@ -16,7 +16,7 @@
         <div class="col-md-2 col-sm-6">
             <h5><?=$this->translate("My Account")?></h5>
             <ul>
-                <?php if($this->session->user instanceof \CoreShop\Plugin\User) { ?>
+                <?php if($this->session->user instanceof \Pimcore\Model\Object\CoreShopUser) { ?>
                     <li><a href="<?=$this->url(array("lang" => $this->language, "action" => "profile"), "coreshop_user")?>"><?=$this->translate("My Account")?></a></li>
                     <li><a href="<?=$this->url(array("lang" => $this->language, "action" => "orders"), "coreshop_user")?>"><?=$this->translate("My orders")?></a></li>
                     <li><a href="<?=$this->url(array("lang" => $this->language, "action" => "addresses"), "coreshop_user")?>"><?=$this->translate("My addresses")?></a></li>

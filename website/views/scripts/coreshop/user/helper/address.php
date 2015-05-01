@@ -82,10 +82,10 @@
         <select name="address_country" class="form-control" title="<?=$this->translate("Country")?>">
             <?php
             $countries = $this->countries();
-            $pvalue = $postValue("country") instanceof \Pimcore\Model\Object\CoreShopCountry ? $postValue("country")->getId() : -1;
+            $pvalue = $postValue("country") instanceof \CoreShop\Model\Country ? $postValue("country")->getId() : -1;
             ?>
             <?php foreach ($countries as $country) { ?>
-                <option value="<?=$country->getId()?>" <?=$country->getId() == $pvalue ? "selected" : ""?>><?=$this->translateCountry($country->getCountry())?></option>
+                <option value="<?=$country->getId()?>" <?=$country->getId() == $pvalue ? "selected" : ""?>><?=$this->translateCountry($country->getIsoCode())?></option>
             <?php } ?>
         </select>
     </div>

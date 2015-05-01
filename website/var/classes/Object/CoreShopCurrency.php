@@ -1,6 +1,6 @@
 <?php 
 
-/** Generated at 2015-04-10T12:02:19+02:00 */
+/** Generated at 2015-04-24T12:07:45+02:00 */
 
 /**
 * Inheritance: no
@@ -14,7 +14,7 @@ namespace Pimcore\Model\Object;
 
 
 
-class CoreShopCurrency extends \CoreShop\Model\Currency {
+class CoreShopCurrency extends \CoreShop\Model\CurrencyModel {
 
 public $o_classId = 35;
 public $o_className = "CoreShopCurrency";

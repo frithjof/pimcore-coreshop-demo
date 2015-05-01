@@ -1,12 +1,12 @@
 <?php 
 
-/** Generated at 2015-04-10T10:03:58+02:00 */
+/** Generated at 2015-04-25T13:49:18+02:00 */
 
 /**
 * Inheritance: no
 * Variants   : no
 * Changed by : admin (2)
-* IP:          81.10.194.170
+* IP:          90.146.27.192
 */
 
 
@@ -14,7 +14,7 @@ namespace Pimcore\Model\Object;
 
 
 
-class CoreShopCountry extends \CoreShop\Model\Country {
+class CoreShopCountry extends \CoreShop\Model\CountryModel {
 
 public $o_classId = 34;
 public $o_className = "CoreShopCountry";
