@@ -1,6 +1,6 @@
 <?php 
 
-/** Generated at 2015-05-01T13:24:07+02:00 */
+/** Generated at 2015-05-01T15:58:39+02:00 */
 
 /**
 * Inheritance: no
@@ -222,7 +222,9 @@ public function setNewsletterConfirmed ($newsletterConfirmed) {
 protected static $_relationFields = array (
 );
 
-public $lazyLoadedFields = NULL;
+public $lazyLoadedFields = array (
+  0 => 'addresses',
+);
 
 }
 

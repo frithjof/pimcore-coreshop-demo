@@ -1,6 +1,6 @@
 <?php 
 
-/** Generated at 2015-05-01T15:08:25+02:00 */
+/** Generated at 2015-05-01T16:00:23+02:00 */
 
 /**
 * IP:          90.146.54.62
@@ -25,7 +25,6 @@ public $extra;
 public $phone;
 public $phone_mobile;
 public $name;
-public $image;
 public $country;
 
 
@@ -239,27 +238,8 @@ public function setName ($name) {
 }
 
 /**
-* Get image - image
-* @return \Pimcore\Model\Asset\Image
-*/
-public function getImage () {
-	$data = $this->image;
-	 return $data;
-}
-
-/**
-* Get image - image
-* @param \Pimcore\Model\Asset\Image $image
-* @return \Pimcore\Model\Object\CoreShopUserAddress
-*/
-public function setImage ($image) {
-	$this->image = $image;
-	return $this;
-}
-
-/**
 * Get country - Country
-* @return string
+* @return CoreShop\Model\Country
 */
 public function getCountry () {
 	$data = $this->country;
@@ -268,7 +248,7 @@ public function getCountry () {
 
 /**
 * Get country - Country
-* @param string $country
+* @param CoreShop\Model\Country $country
 * @return \Pimcore\Model\Object\CoreShopUserAddress
 */
 public function setCountry ($country) {

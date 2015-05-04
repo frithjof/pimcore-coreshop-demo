@@ -1,12 +1,12 @@
 <?php 
 
-/** Generated at 2015-04-20T14:50:48+02:00 */
+/** Generated at 2015-05-04T19:10:16+02:00 */
 
 /**
 * Inheritance: no
 * Variants   : no
 * Changed by : admin (2)
-* IP:          81.10.194.170
+* IP:          90.146.27.192
 */
 
 
@@ -18,6 +18,7 @@ class CoreShopOrder extends \CoreShop\Model\Order {
 
 public $o_classId = 32;
 public $o_className = "CoreShopOrder";
+public $orderState;
 public $orderDate;
 public $lang;
 public $items;
@@ -31,6 +32,7 @@ public $shipping;
 public $payments;
 public $extraInformation;
 public $cartRule;
+public $testLang;
 
 
 /**
@@ -41,6 +43,29 @@ public static function create($values = array()) {
 	$object = new static();
 	$object->setValues($values);
 	return $object;
+}
+
+/**
+* Get orderState - Order State
+* @return \Pimcore\Model\Object\AbstractObject
+*/
+public function getOrderState () {
+	$preValue = $this->preGetValue("orderState"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
+		return $preValue;
+	}
+	$data = $this->orderState;
+	return $data;
+}
+
+/**
+* Set orderState - Order State
+* @param \Pimcore\Model\Object\AbstractObject $orderState
+* @return \Pimcore\Model\Object\CoreShopOrder
+*/
+public function setOrderState ($orderState) {
+	$this->orderState = $orderState;
+	return $this;
 }
 
 /**
@@ -344,6 +369,29 @@ public function getCartRule () {
 */
 public function setCartRule ($cartRule) {
 	$this->cartRule = $this->getClass()->getFieldDefinition("cartRule")->preSetData($this, $cartRule);
+	return $this;
+}
+
+/**
+* Get testLang - test
+* @return string
+*/
+public function getTestLang () {
+	$preValue = $this->preGetValue("testLang"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
+		return $preValue;
+	}
+	$data = $this->testLang;
+	return $data;
+}
+
+/**
+* Set testLang - test
+* @param string $testLang
+* @return \Pimcore\Model\Object\CoreShopOrder
+*/
+public function setTestLang ($testLang) {
+	$this->testLang = $testLang;
 	return $this;
 }
 
