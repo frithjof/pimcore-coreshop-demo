@@ -1,12 +1,12 @@
 <?php 
 
-/** Generated at 2015-05-04T19:19:56+02:00 */
+/** Generated at 2015-05-06T16:09:00+02:00 */
 
 /**
 * Inheritance: no
 * Variants   : no
 * Changed by : admin (2)
-* IP:          90.146.27.192
+* IP:          90.146.54.62
 */
 
 
@@ -14,7 +14,7 @@ namespace Pimcore\Model\Object;
 
 
 
-class CoreShopOrderState extends Concrete {
+class CoreShopOrderState extends \CoreShop\Model\OrderState {
 
 public $o_classId = 37;
 public $o_className = "CoreShopOrderState";
